@@ -31,13 +31,14 @@ final class Post_IDs_Query implements Post_Query {
 	 */
 	public function query_object(): WP_Query {
 		$query        = new WP_Query();
-		$query->posts = $this->post_objects();
+		$query->posts = $this->post_ids();
 
 		// Fill in other properties to make it look more like an executed query.
 		$count                = \count( $query->posts );
 		$query->found_posts   = $count;
 		$query->post_count    = $count;
 		$query->max_num_pages = 1;
+		$query->set( 'fields', 'ids' );
 
 		return $query;
 	}
@@ -48,8 +49,8 @@ final class Post_IDs_Query implements Post_Query {
 	 * @return WP_Post[]
 	 */
 	public function post_objects(): array {
-		$posts = array_map( 'get_post', $this->post_ids );
-		$posts = array_filter( $posts, fn( $p ) => $p instanceof WP_Post );
+		$posts = array_map( 'get_post', $this->post_ids() );
+		$posts = array_filter( $posts, fn ( $p ) => $p instanceof WP_Post );
 
 		return $posts;
 	}
@@ -60,6 +61,9 @@ final class Post_IDs_Query implements Post_Query {
 	 * @return int[]
 	 */
 	public function post_ids(): array {
-		return $this->post_ids;
+		$ids = array_map( 'intval', $this->post_ids );
+		$ids = array_filter( $ids, fn ( $id ) => $id > 0 );
+
+		return $ids;
 	}
 }
