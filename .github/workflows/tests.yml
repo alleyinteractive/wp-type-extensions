@@ -1,0 +1,17 @@
+name: Tests
+
+on:
+  pull_request:
+
+jobs:
+  phpunit:
+    strategy:
+      matrix:
+        php: [ 8.2, 8.1, 8.0 ]
+        wordpress: [ "latest" ]
+        multisite: [ false, true ]
+    uses: alleyinteractive/.github/.github/workflows/php-tests.yml@main
+    with:
+      php: ${{ matrix.php }}
+      wordpress: ${{ matrix.wordpress }}
+      multisite: ${{ matrix.multisite }}
