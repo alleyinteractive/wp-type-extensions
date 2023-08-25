@@ -17,7 +17,7 @@
     "lock": false
   },
   "require": {
-    "php": "^8.0"
+    "php": "^8.1"
   },
   "require-dev": {
     "alleyinteractive/alley-coding-standards": "^1.0.0",
