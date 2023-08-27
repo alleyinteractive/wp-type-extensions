@@ -36,8 +36,11 @@
         </properties>
     </rule>
 
-    <!-- Use a test-*.php class naming convention. -->
+    <!-- Use PSR-4 test class naming convention. -->
     <rule ref="WordPress.Files.FileName.InvalidClassFileName">
+        <exclude-pattern>tests/</exclude-pattern>
+    </rule>
+    <rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
         <exclude-pattern>tests/</exclude-pattern>
     </rule>
 

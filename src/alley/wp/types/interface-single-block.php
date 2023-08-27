@@ -14,14 +14,14 @@ interface Single_Block extends Serialized_Blocks {
 	/**
 	 * Block name.
 	 *
-	 * @return string
+	 * @return string|null
 	 */
-	public function block_name(): string;
+	public function block_name(): ?string;
 
 	/**
 	 * Parsed block.
 	 *
-	 * @return non-empty-array<string, string|array>
+	 * @return mixed[]
 	 */
 	public function parsed_block(): array;
 }
