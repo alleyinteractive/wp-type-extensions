@@ -39,11 +39,11 @@ final class Used_Post_IDs implements Post_IDs {
 	}
 
 	/**
-	 * Save a used post ID.
+	 * Record used post IDs.
 	 *
 	 * @param int|int[] $post_ids Post ID or IDs.
 	 */
-	public function save( int|array $post_ids ): void {
+	public function record( int|array $post_ids ): void {
 		if ( \is_int( $post_ids ) ) {
 			$post_ids = [ $post_ids ];
 		}
