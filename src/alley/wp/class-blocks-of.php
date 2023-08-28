@@ -49,7 +49,7 @@ final class Blocks_Of implements Block_Sequence {
 	 * @param string $content Block content.
 	 * @return Block_Sequence
 	 */
-	public static function block_content( string $content ) {
+	public static function block_content( string $content ): Block_Sequence {
 		return new self(
 			function () use ( $content ) {
 				return self::iterable(
