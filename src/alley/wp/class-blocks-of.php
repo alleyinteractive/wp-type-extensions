@@ -29,7 +29,10 @@ final class Blocks_Of implements Block_Sequence {
 	 * @param callable        $reduce Reducer callback that produces block instances.
 	 * @return Block_Sequence
 	 */
-	public static function iterable( iterable $values, callable $reduce ): Block_Sequence {
+	public static function iterable( // phpcs:ignore Squiz.Commenting.FunctionComment.IncorrectTypeHint
+		iterable $values,
+		callable $reduce,
+	): Block_Sequence {
 		return new self(
 			function () use ( $values, $reduce ) {
 				$carry = [];

@@ -44,7 +44,7 @@ final class Parsed_Block implements Single_Block {
 		$inner_content = isset( $this->origin['innerContent'] ) && is_array( $this->origin['innerContent'] ) ? $this->origin['innerContent'] : [];
 
 		return (array) new WP_Block_Parser_Block(
-			$this->block_name(), /** @phpstan-ignore-line */
+			$this->block_name(), // @phpstan-ignore-line
 			$attrs,
 			$inner_blocks,
 			$inner_html,
