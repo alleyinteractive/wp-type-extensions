@@ -34,17 +34,21 @@ final class Optimistic_Date_Queries implements Post_Queries {
 	/**
 	 * Query for posts using literal arguments.
 	 *
-	 * @param array $args The arguments to be used in the query.
+	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
 	public function post_query_for_args( array $args ): Post_Query {
-		$expected_count = (int) ( $args['posts_per_page'] ?? $this->posts_per_page );
+		$expected_count = $this->posts_per_page;
+
+		if ( isset( $args['posts_per_page'] ) && is_numeric( $args['posts_per_page'] ) ) {
+			$expected_count = (int) $args['posts_per_page'];
+		}
 
 		foreach ( $this->after as $after ) {
 			$with_date_query = new Enforced_Date_Queries( $after, $this->origin );
 			$result          = $with_date_query->post_query_for_args( $args );
 
-			if ( count( $result->post_ids() ) === $expected_count ) {
+			if ( \count( $result->post_ids() ) === $expected_count ) {
 				return $result;
 			}
 		}

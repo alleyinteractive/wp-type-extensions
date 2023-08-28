@@ -26,7 +26,7 @@ final class Memoized_Post_Queries implements Post_Queries {
 	/**
 	 * Query for posts using literal arguments.
 	 *
-	 * @param array $args The arguments to be used in the query.
+	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
 	public function post_query_for_args( array $args ): Post_Query {

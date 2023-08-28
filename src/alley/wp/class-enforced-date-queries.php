@@ -29,7 +29,7 @@ final class Enforced_Date_Queries implements Post_Queries {
 	/**
 	 * Query for posts using literal arguments.
 	 *
-	 * @param array $args The arguments to be used in the query.
+	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
 	public function post_query_for_args( array $args ): Post_Query {
@@ -41,12 +41,12 @@ final class Enforced_Date_Queries implements Post_Queries {
 	/**
 	 * Add 'after' date query with the given date.
 	 *
-	 * @param array             $args  Query arguments.
-	 * @param DateTimeInterface $after Date instance.
-	 * @return array
+	 * @param array<string, mixed> $args  Query arguments.
+	 * @param DateTimeInterface    $after Date instance.
+	 * @return array<string, mixed>
 	 */
 	private function with_date_query( array $args, DateTimeInterface $after ): array {
-		if ( ! isset( $args['date_query'] ) || ! is_array( $args['date_query'] ) ) {
+		if ( ! isset( $args['date_query'] ) || ! \is_array( $args['date_query'] ) ) {
 			$args['date_query'] = [];
 		}
 
