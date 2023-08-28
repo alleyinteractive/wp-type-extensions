@@ -51,26 +51,4 @@ final class Optimistic_Date_Queries implements Post_Queries {
 
 		return $this->origin->post_query_for_args( $args );
 	}
-
-	/**
-	 * Query for posts in a term.
-	 *
-	 * @param int   $term_id The term ID to be queried.
-	 * @param array $args    The arguments to be used in the query.
-	 * @return Post_Query
-	 */
-	public function post_query_for_term( int $term_id, array $args ): Post_Query {
-		$expected_count = (int) ( $args['posts_per_page'] ?? $this->posts_per_page );
-
-		foreach ( $this->after as $after ) {
-			$with_date_query = new Enforced_Date_Queries( $after, $this->origin );
-			$result          = $with_date_query->post_query_for_term( $term_id, $args );
-
-			if ( count( $result->post_ids() ) === $expected_count ) {
-				return $result;
-			}
-		}
-
-		return $this->origin->post_query_for_term( $term_id, $args );
-	}
 }

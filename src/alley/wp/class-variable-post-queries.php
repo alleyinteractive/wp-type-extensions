@@ -41,17 +41,6 @@ final class Variable_Post_Queries implements Post_Queries {
 	}
 
 	/**
-	 * Query for posts in a term.
-	 *
-	 * @param int   $term_id The term ID to be queried.
-	 * @param array $args    The arguments to be used in the query.
-	 * @return Post_Query
-	 */
-	public function post_query_for_term( int $term_id, array $args ): Post_Query {
-		return $this->final()->post_query_for_term( $term_id, $args );
-	}
-
-	/**
 	 * Post_Queries instance to use.
 	 *
 	 * @return Post_Queries
