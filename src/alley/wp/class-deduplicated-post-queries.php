@@ -10,6 +10,9 @@ namespace Alley\WP;
 use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;
 
+/**
+ * Queries implementation that excludes posts marked as already used.
+ */
 final class Deduplicated_Post_Queries implements Post_Queries {
 	/**
 	 * Set up.
