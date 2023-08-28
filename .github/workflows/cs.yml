@@ -33,3 +33,6 @@ jobs:
 
       - name: Run PHP-CS-Fixer
         run: vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no --allow-risky=yes
+
+      - name: Run PHPStan
+        run: composer run-script phpstan
