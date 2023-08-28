@@ -12,7 +12,7 @@ namespace Alley\WP\Types;
  */
 interface Serialized_Blocks {
 	/**
-	 * Serialized blocks.
+	 * Serialized block content.
 	 *
 	 * @return string
 	 */
