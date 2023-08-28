@@ -17,7 +17,7 @@
     "lock": false
   },
   "require": {
-    "php": "^8.0",
+    "php": "^8.1",
     "spatie/once": "^3.1"
   },
   "require-dev": {
