@@ -1,6 +1,6 @@
 <?php
 /**
- * Memoized_Post_Post_Queries class file
+ * Memoized_Post_Queries class file
  *
  * @package wp-type-extensions
  */
