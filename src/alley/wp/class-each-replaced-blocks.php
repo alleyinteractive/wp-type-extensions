@@ -37,9 +37,9 @@ final class Each_Replaced_Blocks implements Block_Sequence {
 
 		$parsed_blocks = parse_blocks( $this->find->serialized_blocks() );
 
-		if ( is_array( $parsed_blocks ) ) {
+		if ( \is_array( $parsed_blocks ) ) {
 			foreach ( $parsed_blocks as $find ) {
-				if ( is_array( $find ) && count( $find ) > 0 ) {
+				if ( \is_array( $find ) && \count( $find ) > 0 ) {
 					$parsed = new Parsed_Block( $find );
 					$out    = str_replace( $parsed->serialized_blocks(), $this->replace->serialized_blocks(), $out );
 				}

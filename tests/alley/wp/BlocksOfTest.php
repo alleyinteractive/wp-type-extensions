@@ -12,7 +12,7 @@ use Mantle\Testkit\Test_Case;
 /**
  * Tests for Blocks_Of.
  */
-class BlocksOfTest extends Test_Case {
+final class BlocksOfTest extends Test_Case {
 	/**
 	 * Test blocks of iterable.
 	 */

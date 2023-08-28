@@ -44,13 +44,13 @@ final class Prepended_Inner_Blocks implements Single_Block {
 		$add = parse_blocks( $this->block->serialized_blocks() );
 
 		if (
-			is_array( $add )
+			\is_array( $add )
 			&& isset( $out['innerBlocks'], $out['innerContent'] )
-			&& is_array( $out['innerBlocks'] )
-			&& is_array( $out['innerContent'] )
+			&& \is_array( $out['innerBlocks'] )
+			&& \is_array( $out['innerContent'] )
 		) {
 			$out['innerBlocks']  = array_merge( $add, $out['innerBlocks'] );
-			$out['innerContent'] = array_merge( array_fill( 0, count( $add ), null ), $out['innerContent'] );
+			$out['innerContent'] = array_merge( array_fill( 0, \count( $add ), null ), $out['innerContent'] );
 		}
 
 		return $out;

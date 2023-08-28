@@ -29,7 +29,7 @@ final class Parsed_Block implements Single_Block {
 	 * @return string|null
 	 */
 	public function block_name(): ?string {
-		return isset( $this->origin['blockName'] ) && is_string( $this->origin['blockName'] ) ? $this->origin['blockName'] : null;
+		return isset( $this->origin['blockName'] ) && \is_string( $this->origin['blockName'] ) ? $this->origin['blockName'] : null;
 	}
 
 	/**
@@ -38,10 +38,10 @@ final class Parsed_Block implements Single_Block {
 	 * @return mixed[]
 	 */
 	public function parsed_block(): array {
-		$attrs         = isset( $this->origin['attrs'] ) && is_array( $this->origin['attrs'] ) ? $this->origin['attrs'] : [];
-		$inner_blocks  = isset( $this->origin['innerBlocks'] ) && is_array( $this->origin['innerBlocks'] ) ? $this->origin['innerBlocks'] : [];
-		$inner_html    = isset( $this->origin['innerHTML'] ) && is_string( $this->origin['innerHTML'] ) ? $this->origin['innerHTML'] : '';
-		$inner_content = isset( $this->origin['innerContent'] ) && is_array( $this->origin['innerContent'] ) ? $this->origin['innerContent'] : [];
+		$attrs         = isset( $this->origin['attrs'] ) && \is_array( $this->origin['attrs'] ) ? $this->origin['attrs'] : [];
+		$inner_blocks  = isset( $this->origin['innerBlocks'] ) && \is_array( $this->origin['innerBlocks'] ) ? $this->origin['innerBlocks'] : [];
+		$inner_html    = isset( $this->origin['innerHTML'] ) && \is_string( $this->origin['innerHTML'] ) ? $this->origin['innerHTML'] : '';
+		$inner_content = isset( $this->origin['innerContent'] ) && \is_array( $this->origin['innerContent'] ) ? $this->origin['innerContent'] : [];
 
 		return (array) new WP_Block_Parser_Block(
 			$this->block_name(), // @phpstan-ignore-line

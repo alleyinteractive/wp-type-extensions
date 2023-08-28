@@ -12,7 +12,7 @@ use Mantle\Testkit\Test_Case;
 /**
  * Tests for Prepended_Inner_Blocks.
  */
-class PrependedInnerBlocksTest extends Test_Case {
+final class PrependedInnerBlocksTest extends Test_Case {
 	/**
 	 * Test adding one inner block.
 	 */

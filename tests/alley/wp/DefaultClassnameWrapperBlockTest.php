@@ -12,7 +12,7 @@ use Mantle\Testkit\Test_Case;
 /**
  * Tests for Default_Classname_Wrapper_Block.
  */
-class DefaultClassnameWrapperBlockTest extends Test_Case {
+final class DefaultClassnameWrapperBlockTest extends Test_Case {
 	/**
 	 * Test that wrapper is added.
 	 */
