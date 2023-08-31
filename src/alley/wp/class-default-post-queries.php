@@ -23,6 +23,6 @@ final class Default_Post_Queries implements Post_Queries {
 	 * @return Post_Query
 	 */
 	public function post_query_for_args( array $args ): Post_Query {
-		return new Origin_Post_Query( new WP_Query( $args ) );
+		return new Post_Query_Envelope( new WP_Query( $args ) );
 	}
 }

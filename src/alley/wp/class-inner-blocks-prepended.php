@@ -1,6 +1,6 @@
 <?php
 /**
- * Prepended_Inner_Blocks class file
+ * Inner_Blocks_Prepended class file
  *
  * @package wp-type-extensions
  */
@@ -13,7 +13,7 @@ use Alley\WP\Types\Single_Block;
 /**
  * Block with prepended inner blocks.
  */
-final class Prepended_Inner_Blocks implements Single_Block {
+final class Inner_Blocks_Prepended implements Single_Block {
 	/**
 	 * Set up.
 	 *

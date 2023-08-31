@@ -43,7 +43,7 @@ final class Global_Post_Query implements Post_Query {
 	 * @return WP_Post[]
 	 */
 	public function post_objects(): array {
-		$query = new Origin_Post_Query( $this->query_object() );
+		$query = new Post_Query_Envelope( $this->query_object() );
 
 		return $query->post_objects();
 	}
@@ -54,7 +54,7 @@ final class Global_Post_Query implements Post_Query {
 	 * @return int[]
 	 */
 	public function post_ids(): array {
-		$query = new Origin_Post_Query( $this->query_object() );
+		$query = new Post_Query_Envelope( $this->query_object() );
 
 		return $query->post_ids();
 	}

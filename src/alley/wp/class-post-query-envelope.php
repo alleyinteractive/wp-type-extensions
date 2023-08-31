@@ -1,6 +1,6 @@
 <?php
 /**
- * Origin_Post_Query class file
+ * Post_Query_Envelope class file
  *
  * @package wp-type-extensions
  */
@@ -14,14 +14,14 @@ use WP_Query;
 /**
  * Post_Query from an existing query.
  */
-final class Origin_Post_Query implements Post_Query {
+final class Post_Query_Envelope implements Post_Query {
 	/**
 	 * Set up.
 	 *
 	 * @param WP_Query $query Query object.
 	 */
 	public function __construct(
-		private readonly WP_Query $query
+		private readonly WP_Query $query,
 	) {}
 
 	/**
@@ -60,13 +60,13 @@ final class Origin_Post_Query implements Post_Query {
 	 * @param array<WP_Post|int|object>|WP_Query $values Post-like objects or IDs, or a query object.
 	 * @return int[] Post IDs, if any.
 	 */
-	private function to_post_ids( $values ) {
+	private static function to_post_ids( $values ) {
 		$ids = [];
 
 		if ( $values instanceof WP_Query ) {
-			$ids = $this->to_post_ids( (array) $values->posts );
+			$ids = self::to_post_ids( (array) $values->posts );
 		} elseif ( \is_array( $values ) ) {
-			$ids = array_map( [ $this, 'to_post_id' ], $values );
+			$ids = array_map( [ self::class, 'to_post_id' ], $values );
 		}
 
 		if ( $ids ) {
