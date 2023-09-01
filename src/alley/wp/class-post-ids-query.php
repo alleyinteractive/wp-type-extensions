@@ -49,7 +49,11 @@ final class Post_IDs_Query implements Post_Query {
 	 * @return WP_Post[]
 	 */
 	public function post_objects(): array {
-		$posts = array_map( 'get_post', $this->post_ids() );
+		$post_ids = $this->post_ids();
+
+		_prime_post_caches( $post_ids, false, false );
+
+		$posts = array_map( 'get_post', $post_ids );
 		$posts = array_filter( $posts, fn ( $p ) => $p instanceof WP_Post );
 
 		return $posts;
