@@ -18,13 +18,13 @@ final class Variable_Post_Queries implements Post_Queries {
 	/**
 	 * Set up.
 	 *
-	 * @param mixed              $input    Test input.
+	 * @param callable           $input    Test input.
 	 * @param ValidatorInterface $test     Validation test.
 	 * @param Post_Queries       $is_true  Post_Queries if the test passes.
 	 * @param Post_Queries       $is_false Post_Queries if the test fails.
 	 */
 	public function __construct(
-		private readonly mixed $input,
+		private $input,
 		private readonly ValidatorInterface $test,
 		private readonly Post_Queries $is_true,
 		private readonly Post_Queries $is_false,
@@ -46,6 +46,6 @@ final class Variable_Post_Queries implements Post_Queries {
 	 * @return Post_Queries
 	 */
 	private function final() {
-		return $this->test->isValid( $this->input ) ? $this->is_true : $this->is_false;
+		return $this->test->isValid( ( $this->input )() ) ? $this->is_true : $this->is_false;
 	}
 }
