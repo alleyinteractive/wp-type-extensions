@@ -1,6 +1,6 @@
 <?php
 /**
- * Post_Query_Envelope class file
+ * WP_Query_Envelope class file
  *
  * @package wp-type-extensions
  */
@@ -14,7 +14,7 @@ use WP_Query;
 /**
  * Post_Query from an existing query.
  */
-final class Post_Query_Envelope implements Post_Query {
+final class WP_Query_Envelope implements Post_Query {
 	/**
 	 * Set up.
 	 *
