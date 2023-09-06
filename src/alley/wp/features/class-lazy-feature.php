@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Features;
 
 use Alley\WP\Types\Feature;
 
