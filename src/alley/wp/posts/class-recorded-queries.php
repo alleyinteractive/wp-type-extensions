@@ -12,6 +12,7 @@ use Alley\WP\Types\Post_Query;
 use Alley\WP\Used_Post_IDs;
 
 /**
+ * Recorded_Queries class
  */
 final class Recorded_Queries implements Post_Queries {
 	/**

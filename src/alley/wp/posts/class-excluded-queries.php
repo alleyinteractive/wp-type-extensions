@@ -13,17 +13,19 @@ use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;
 
 /**
+ * Excluded_Queries class
  */
 final class Excluded_Queries implements Post_Queries {
 	/**
 	 * Set up.
 	 *
 	 * @param Post_IDs     $exclude Excluded post IDs.
+	 * @param int|null     $posts_per_page Number of posts per page.
 	 * @param Post_Queries $origin  Post_Queries object.
 	 */
 	public function __construct(
 		private readonly Post_IDs $exclude,
-		private readonly int $posts_per_page,
+		private readonly int|null $posts_per_page,
 		private readonly Post_Queries $origin,
 	) {}
 
