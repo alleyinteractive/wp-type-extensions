@@ -29,7 +29,7 @@ final class Memoized_Post_Queries implements Post_Queries {
 	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
-	public function post_query_for_args( array $args ): Post_Query {
-		return once( fn () => $this->origin->post_query_for_args( $args ) );
+	public function query( array $args ): Post_Query {
+		return once( fn () => $this->origin->query( $args ) );
 	}
 }

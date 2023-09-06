@@ -22,7 +22,7 @@ final class Default_Post_Queries implements Post_Queries {
 	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
-	public function post_query_for_args( array $args ): Post_Query {
+	public function query( array $args ): Post_Query {
 		return new WP_Query_Envelope( new WP_Query( $args ) );
 	}
 }

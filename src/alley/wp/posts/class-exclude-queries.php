@@ -35,7 +35,7 @@ final class Exclude_Queries implements Post_Queries {
 	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
-	public function post_query_for_args( array $args ): Post_Query {
+	public function query( array $args ): Post_Query {
 		$excluded_post_ids = $this->exclude->post_ids();
 		$expected_per_page = $this->default_per_page;
 
@@ -45,7 +45,7 @@ final class Exclude_Queries implements Post_Queries {
 
 		// Ask for the number of posts we expect to return, plus the number of posts to exclude.
 		$args['posts_per_page'] = $expected_per_page + \count( $excluded_post_ids );
-		$overfetched_query      = $this->origin->post_query_for_args( $args );
+		$overfetched_query      = $this->origin->query( $args );
 
 		// Remove the excluded from the overfetched query.
 		$diff_post_ids = array_diff( $overfetched_query->post_ids(), $excluded_post_ids );

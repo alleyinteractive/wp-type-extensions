@@ -32,10 +32,10 @@ final class Enforced_Date_Queries implements Post_Queries {
 	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
-	public function post_query_for_args( array $args ): Post_Query {
+	public function query( array $args ): Post_Query {
 		$with_date_query = $this->with_date_query( $args, $this->after );
 
-		return $this->origin->post_query_for_args( $with_date_query );
+		return $this->origin->query( $with_date_query );
 	}
 
 	/**
