@@ -5,6 +5,8 @@
  * @package wp-type-extensions
  */
 
+namespace Alley\WP\Posts;
+
 use Alley\WP\Types\Post_IDs;
 
 /**
