@@ -51,7 +51,7 @@ final class WP_Query_Envelope implements Post_Query {
 	 * @return int[]
 	 */
 	public function post_ids(): array {
-		return $this->to_post_ids( $this->query_object() );
+		return self::to_post_ids( $this->query_object() );
 	}
 
 	/**
@@ -60,7 +60,7 @@ final class WP_Query_Envelope implements Post_Query {
 	 * @param array<WP_Post|int|object>|WP_Query $values Post-like objects or IDs, or a query object.
 	 * @return int[] Post IDs, if any.
 	 */
-	private static function to_post_ids( $values ) {
+	private static function to_post_ids( $values ): array {
 		$ids = [];
 
 		if ( $values instanceof WP_Query ) {

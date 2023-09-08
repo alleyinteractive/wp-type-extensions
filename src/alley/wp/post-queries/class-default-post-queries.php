@@ -7,9 +7,9 @@
 
 namespace Alley\WP\Post_Queries;
 
+use Alley\WP\Post_Query\WP_Query_Envelope;
 use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;
-use query\WP_Query_Envelope;
 use WP_Query;
 
 /**

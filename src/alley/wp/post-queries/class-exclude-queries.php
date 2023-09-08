@@ -7,10 +7,10 @@
 
 namespace Alley\WP\Post_Queries;
 
+use Alley\WP\Post_Query\Post_IDs_Query;
 use Alley\WP\Types\Post_IDs;
 use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;
-use query\Post_IDs_Query;
 
 /**
  * Queries that exclude some posts.

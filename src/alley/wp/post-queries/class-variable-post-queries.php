@@ -45,7 +45,7 @@ final class Variable_Post_Queries implements Post_Queries {
 	 *
 	 * @return Post_Queries
 	 */
-	private function final() {
+	private function final(): Post_Queries {
 		return $this->test->isValid( ( $this->input )() ) ? $this->is_true : $this->is_false;
 	}
 }

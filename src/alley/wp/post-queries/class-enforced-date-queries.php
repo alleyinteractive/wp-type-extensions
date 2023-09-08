@@ -22,7 +22,7 @@ final class Enforced_Date_Queries implements Post_Queries {
 	 * @param Post_Queries      $origin Post_Queries object.
 	 */
 	public function __construct(
-		private DateTimeInterface $after,
+		private readonly DateTimeInterface $after,
 		private readonly Post_Queries $origin,
 	) {}
 
