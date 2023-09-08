@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Post_Queries;
 
 use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;

@@ -5,12 +5,12 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Post_Queries;
 
 use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;
+use query\WP_Query_Envelope;
 use WP_Query;
-use WP_Term;
 
 /**
  * Queries implementation for most cases.
