@@ -36,10 +36,6 @@ final class WP_Query_Post_IDs implements Post_IDs {
 			$ids = array_map( [ self::class, 'to_post_id' ], $this->query->posts );
 		}
 
-		if ( \count( $ids ) > 0 ) {
-			$ids = array_filter( $ids, fn ( $id ) => $id > 0 );
-		}
-
 		return $ids;
 	}
 
