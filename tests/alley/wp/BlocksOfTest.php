@@ -31,14 +31,4 @@ final class BlocksOfTest extends Test_Case {
 			$actual->serialized_blocks(),
 		);
 	}
-
-	/**
-	 * Test blocks of block content.
-	 */
-	public function test_block_content() {
-		$expected = '<!-- wp:foo/bar /--><!-- wp:foo/baz /--><!-- wp:foo/bat /-->';
-		$actual   = Blocks_Of::block_content( $expected );
-
-		$this->assertSame( $expected, $actual->serialized_blocks() );
-	}
 }
