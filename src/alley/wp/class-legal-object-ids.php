@@ -28,8 +28,6 @@ final class Legal_Object_IDs implements Post_IDs {
 	 * @return int[]
 	 */
 	public function post_ids(): array {
-		return $this->origin instanceof Post_IDs
-			? array_filter( $this->origin->post_ids(), fn ( $id ) => $id > 0 )
-			: [];
+		return array_filter( $this->origin->post_ids(), fn ( $id ) => $id > 0 );
 	}
 }
