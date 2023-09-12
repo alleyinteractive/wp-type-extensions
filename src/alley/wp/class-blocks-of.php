@@ -47,26 +47,6 @@ final class Blocks_Of implements Block_Sequence {
 	}
 
 	/**
-	 * Constructor for block content.
-	 *
-	 * @param string $content Block content.
-	 * @return Block_Sequence
-	 */
-	public static function block_content( string $content ): Block_Sequence {
-		return new self(
-			function () use ( $content ) {
-				return self::iterable(
-					parse_blocks( $content ),
-					function ( array $carry, array $block ) {
-						$carry[] = new Parsed_Block( $block );
-						return $carry;
-					}
-				);
-			},
-		);
-	}
-
-	/**
 	 * Serialized block content.
 	 *
 	 * @return string

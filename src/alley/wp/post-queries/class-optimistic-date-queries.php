@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Post_Queries;
 
 use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;
@@ -37,7 +37,7 @@ final class Optimistic_Date_Queries implements Post_Queries {
 	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
-	public function post_query_for_args( array $args ): Post_Query {
+	public function query( array $args ): Post_Query {
 		$expected_count = $this->posts_per_page;
 
 		if ( isset( $args['posts_per_page'] ) && is_numeric( $args['posts_per_page'] ) ) {
@@ -46,13 +46,13 @@ final class Optimistic_Date_Queries implements Post_Queries {
 
 		foreach ( $this->after as $after ) {
 			$with_date_query = new Enforced_Date_Queries( $after, $this->origin );
-			$result          = $with_date_query->post_query_for_args( $args );
+			$result          = $with_date_query->query( $args );
 
 			if ( \count( $result->post_ids() ) === $expected_count ) {
 				return $result;
 			}
 		}
 
-		return $this->origin->post_query_for_args( $args );
+		return $this->origin->query( $args );
 	}
 }

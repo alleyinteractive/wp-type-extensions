@@ -17,5 +17,5 @@ interface Post_Queries {
 	 * @param array<string, mixed> $args Query arguments.
 	 * @return Post_Query
 	 */
-	public function post_query_for_args( array $args ): Post_Query;
+	public function query( array $args ): Post_Query;
 }

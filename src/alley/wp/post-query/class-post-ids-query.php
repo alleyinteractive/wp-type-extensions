@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Post_Query;
 
 use Alley\WP\Types\Post_Query;
 use WP_Post;
@@ -65,9 +65,6 @@ final class Post_IDs_Query implements Post_Query {
 	 * @return int[]
 	 */
 	public function post_ids(): array {
-		$ids = array_map( 'intval', $this->post_ids );
-		$ids = array_filter( $ids, fn ( $id ) => $id > 0 );
-
-		return $ids;
+		return array_map( 'intval', $this->post_ids );
 	}
 }

@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Post_Queries;
 
 use Alley\WP\Types\Post_Queries;
 use Alley\WP\Types\Post_Query;
@@ -36,8 +36,8 @@ final class Variable_Post_Queries implements Post_Queries {
 	 * @param array<string, mixed> $args The arguments to be used in the query.
 	 * @return Post_Query
 	 */
-	public function post_query_for_args( array $args ): Post_Query {
-		return $this->final()->post_query_for_args( $args );
+	public function query( array $args ): Post_Query {
+		return $this->final()->query( $args );
 	}
 
 	/**
@@ -45,7 +45,7 @@ final class Variable_Post_Queries implements Post_Queries {
 	 *
 	 * @return Post_Queries
 	 */
-	private function final() {
+	private function final(): Post_Queries {
 		return $this->test->isValid( ( $this->input )() ) ? $this->is_true : $this->is_false;
 	}
 }
