@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Blocks;
 
 use Alley\WP\Types\Single_Block;
 

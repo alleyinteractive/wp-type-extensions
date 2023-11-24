@@ -1,18 +1,18 @@
 <?php
 /**
- * Default_Classname_Wrapped_Block class file
+ * Default_Classname_Block class file
  *
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Blocks;
 
 use Alley\WP\Types\Single_Block;
 
 /**
  * Wrap block in block default classname.
  */
-final class Default_Classname_Wrapped_Block implements Single_Block {
+final class Default_Classname_Block implements Single_Block {
 	/**
 	 * Set up.
 	 *

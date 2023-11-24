@@ -5,15 +5,16 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Blocks;
 
-use Alley\WP\Types\Block_Sequence;
 use Alley\WP\Types\Serialized_Blocks;
+
+use function Alley\WP\match_blocks;
 
 /**
  * Matched blocks with {@see match_blocks()}.
  */
-final class Matched_Blocks implements Block_Sequence {
+final class Matched_Blocks implements Serialized_Blocks {
 	/**
 	 * Set up.
 	 *

@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Blocks;
 
 use Alley\WP\Types\Serialized_Blocks;
 use Alley\WP\Types\Single_Block;
@@ -50,7 +50,10 @@ final class Inner_Blocks_Prepended implements Single_Block {
 			&& \is_array( $out['innerContent'] )
 		) {
 			$out['innerBlocks']  = array_merge( $add, $out['innerBlocks'] );
-			$out['innerContent'] = array_merge( array_fill( 0, \count( $add ), null ), $out['innerContent'] );
+			$out['innerContent'] = array_merge(
+				array_fill( 0, \count( $add ), null ),
+				$out['innerContent'],
+			);
 		}
 
 		return $out;
@@ -62,6 +65,7 @@ final class Inner_Blocks_Prepended implements Single_Block {
 	 * @return string
 	 */
 	public function serialized_blocks(): string {
-		return serialize_block( $this->parsed_block() );
+		$pb = new Parsed_Block( $this->parsed_block() );
+		return $pb->serialized_blocks();
 	}
 }
