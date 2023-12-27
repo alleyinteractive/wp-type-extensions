@@ -12,7 +12,7 @@ use WP_Post;
 use WP_Query;
 
 /**
- * The post IDs from a WP_Query.
+ * The post IDs from a `WP_Query`.
  */
 final class WP_Query_Post_IDs implements Post_IDs {
 	/**

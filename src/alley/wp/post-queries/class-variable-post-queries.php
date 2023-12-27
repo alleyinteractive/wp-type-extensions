@@ -12,7 +12,7 @@ use Alley\WP\Types\Post_Query;
 use Laminas\Validator\ValidatorInterface;
 
 /**
- * Choose a query based on the result of a validation test.
+ * Choose queries based on the result of a validation test.
  */
 final class Variable_Post_Queries implements Post_Queries {
 	/**

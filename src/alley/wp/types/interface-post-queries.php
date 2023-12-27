@@ -8,7 +8,7 @@
 namespace Alley\WP\Types;
 
 /**
- * Describes objects that can perform common queries for posts.
+ * Describes an object that contains queries for posts.
  */
 interface Post_Queries {
 	/**

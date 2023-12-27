@@ -10,7 +10,7 @@ namespace Alley\WP\Blocks;
 use Alley\WP\Types\Single_Block;
 
 /**
- * Wrap block in block default classname.
+ * Wrap block markup in the block default classname.
  */
 final class Default_Classname_Block implements Single_Block {
 	/**

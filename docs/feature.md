@@ -1,0 +1,20 @@
+# Feature interface
+
+The `Feature` interface describes a project feature. Features can be large or small, although smaller features can take advantage of decorators more easily. Use the `boot()` method to add actions and filters. Group related features with the `Features` class. 
+
+## Definition
+
+```php
+interface Feature {
+    public function boot(): void;
+}
+```
+
+## Bundled implementations
+
+- [Conditional_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-conditional-feature.php): Boot a feature only when a condition is met.
+- [Features](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-features.php): Bundle many features.
+- [Lazy_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-lazy-feature.php): Instantiate a feature only when called upon.
+- [Quick_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-quick-feature.php): Make a callable a feature.
+- [Template_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-template-feature.php): Boot a feature only when templates load.
+- [WP_CLI_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-wp-cli-feature.php): Boot a feature only WP-CLI loads.

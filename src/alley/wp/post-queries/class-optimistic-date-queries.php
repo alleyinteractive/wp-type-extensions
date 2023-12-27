@@ -12,7 +12,7 @@ use Alley\WP\Types\Post_Query;
 use DateTimeInterface;
 
 /**
- * Speculate that queries can be limited to posts published after the given dates.
+ * Speculate (but don't require) that queries can be limited to posts published after the given dates.
  */
 final class Optimistic_Date_Queries implements Post_Queries {
 	/**

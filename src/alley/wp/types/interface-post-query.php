@@ -11,9 +11,9 @@ use WP_Post;
 use WP_Query;
 
 /**
- * Describes an object that queries for posts.
+ * Describes an object that contains a single query for posts.
  */
-interface Post_Query {
+interface Post_Query extends Post_IDs {
 	/**
 	 * Query object.
 	 *
@@ -27,11 +27,4 @@ interface Post_Query {
 	 * @return WP_Post[]
 	 */
 	public function post_objects(): array;
-
-	/**
-	 * Found post IDs.
-	 *
-	 * @return int[]
-	 */
-	public function post_ids(): array;
 }
