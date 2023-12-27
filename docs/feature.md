@@ -18,3 +18,35 @@ interface Feature {
 - [Quick_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-quick-feature.php): Make a callable a feature.
 - [Template_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-template-feature.php): Boot a feature only when templates load.
 - [WP_CLI_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-wp-cli-feature.php): Boot a feature only WP-CLI loads.
+
+## Basic usage
+
+```php
+use Alley\WP\Features\Features;
+use Alley\WP\Features\Quick_Feature;
+use Alley\WP\Features\Template_Feature;
+
+$queries = new Project\Post_Queries_Implementation(
+	/* ... */
+);
+
+$project = new Alley\WP\Features\Features(
+	new Features(
+		new Project\Ads_Backend_Feature(),
+		new Template_Feature(
+			origin: new Project\Ads_Frontend_Feature(),
+		),
+	),
+	new Project\Other_Feature(
+		queries: $queries,
+	),
+	new Quick_Feature(
+		function () {
+			remove_action( /* ... */ );
+			remove_filter( /* ... */ );
+		},
+	)
+);
+
+$project->boot();
+```
