@@ -30,7 +30,7 @@ $queries = new Project\Post_Queries_Implementation(
 	/* ... */
 );
 
-$project = new Alley\WP\Features\Features(
+$project = new Features(
 	new Features(
 		new Project\Ads_Backend_Feature(),
 		new Template_Feature(
