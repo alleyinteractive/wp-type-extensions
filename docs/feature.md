@@ -1,6 +1,6 @@
 # Feature interface
 
-The `Feature` interface describes a project feature. Features can be large or small, although smaller features can take advantage of decorators more easily. Use the `boot()` method to add actions and filters. Group related features with the `Features` class. 
+The `Feature` interface describes a project feature. Features can be large or small, although smaller features can take advantage of decorators more easily. Use the `boot()` method to add actions and filters. Group related features with the `Features` class.
 
 ## Definition
 

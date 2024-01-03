@@ -22,8 +22,8 @@ Learn more about the objects included with Type Extensions in the [documentation
 - [Post IDs](docs/post-ids.md)
 - [Post Queries](docs/post-queries.md)
 - [Post Query](docs/post-query.md)
-- [Serialized Blocks](docs/blocks.md)
-- [Single Block](docs/blocks.md)
+- [Serialized Blocks](docs/serialized-blocks.md)
+- [Single Block](docs/single-block.md)
 
 ## About
 
