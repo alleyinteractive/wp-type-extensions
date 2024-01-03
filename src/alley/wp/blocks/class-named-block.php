@@ -10,7 +10,7 @@ namespace Alley\WP\Blocks;
 use Alley\WP\Types\Single_Block;
 
 /**
- * A single block.
+ * A single block with the given block name.
  */
 final class Named_Block implements Single_Block {
 	/**

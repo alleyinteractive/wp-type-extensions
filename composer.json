@@ -28,12 +28,10 @@
     "mantle-framework/testkit": "^0.9",
     "szepeviktor/phpstan-wordpress": "^1.1"
   },
-  "scripts": {
-    "fixer": "php-cs-fixer -v fix --allow-risky=yes",
-    "phpcbf": "phpcbf",
-    "phpcs": "phpcs",
-    "phpstan": "phpstan --memory-limit=512M",
-    "phpunit": "phpunit"
+  "autoload-dev": {
+    "psr-4": {
+      "Alley\\": "tests/alley/"
+    }
   },
   "extra": {
     "wordpress-autoloader": {
@@ -44,5 +42,12 @@
         "Alley\\": "tests/alley/"
       }
     }
+  },
+  "scripts": {
+    "fixer": "php-cs-fixer -v fix --allow-risky=yes",
+    "phpcbf": "phpcbf",
+    "phpcs": "phpcs",
+    "phpstan": "phpstan --memory-limit=512M",
+    "phpunit": "phpunit"
   }
 }

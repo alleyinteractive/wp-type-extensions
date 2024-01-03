@@ -8,7 +8,7 @@
 namespace Alley\WP\Types;
 
 /**
- * Describes an object with post IDs.
+ * Describes an object containing post IDs.
  */
 interface Post_IDs {
 	/**

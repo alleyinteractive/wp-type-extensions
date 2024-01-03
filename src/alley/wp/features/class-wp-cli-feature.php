@@ -10,7 +10,7 @@ namespace Alley\WP\Features;
 use Alley\WP\Types\Feature;
 
 /**
- * Boot a feature only in WP-CLI.
+ * Boot a feature only WP-CLI loads.
  */
 final class WP_CLI_Feature implements Feature {
 	/**

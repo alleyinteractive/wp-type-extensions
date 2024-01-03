@@ -12,7 +12,7 @@ use Alley\WP\Types\Post_Query;
 use DateTimeInterface;
 
 /**
- * Enforce a date query.
+ * Queries that enforce a date query.
  */
 final class Enforced_Date_Queries implements Post_Queries {
 	/**
