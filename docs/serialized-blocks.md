@@ -20,4 +20,3 @@ interface Serialized_Blocks {
 
 All `Single_Block` implementations also implement `Serialized_Blocks`.
 
-- [Inner_Blocks_Prepended](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-inner-blocks-prepended.php):
