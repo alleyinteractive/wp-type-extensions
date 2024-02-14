@@ -5,7 +5,7 @@ The `Single_Block` interface describes an object containing a single block.
 ## Definition
 
 ```php
-interface Single_Block extends Serialized_Blocks {
+interface Single_Block {
 	public function block_name(): ?string;
 
 	public function parsed_block(): array;

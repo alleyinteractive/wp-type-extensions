@@ -13,7 +13,7 @@ interface Feature {
 ## Bundled implementations
 
 - [Conditional_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-conditional-feature.php): Boot a feature only when a condition is met.
-- [Features](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-features.php): Bundle many features.
+- [Group](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-group.php): Group related features.
 - [Lazy_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-lazy-feature.php): Instantiate a feature only when called upon.
 - [Quick_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-quick-feature.php): Make a callable a feature.
 - [Template_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-template-feature.php): Boot a feature only when templates load.
@@ -22,7 +22,7 @@ interface Feature {
 ## Basic usage
 
 ```php
-use Alley\WP\Features\Features;
+use Alley\WP\Features\Group;
 use Alley\WP\Features\Quick_Feature;
 use Alley\WP\Features\Template_Feature;
 
@@ -30,8 +30,8 @@ $queries = new Project\Post_Queries_Implementation(
 	/* ... */
 );
 
-$project = new Features(
-	new Features(
+$project = new Group(
+	new Group(
 		new Project\Ads_Backend_Feature(),
 		new Template_Feature(
 			origin: new Project\Ads_Frontend_Feature(),
