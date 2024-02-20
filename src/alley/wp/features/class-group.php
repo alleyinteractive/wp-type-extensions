@@ -1,6 +1,6 @@
 <?php
 /**
- * Features class file
+ * Group class file
  *
  * @package wp-type-extensions
  */
@@ -10,9 +10,9 @@ namespace Alley\WP\Features;
 use Alley\WP\Types\Feature;
 
 /**
- * Bundle many features.
+ * Group many features.
  */
-final class Features implements Feature {
+final class Group implements Feature {
 	/**
 	 * Collected features.
 	 *

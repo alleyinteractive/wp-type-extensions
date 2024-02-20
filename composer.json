@@ -19,8 +19,8 @@
   "require": {
     "php": "^8.1",
     "alleyinteractive/laminas-validator-extensions": "^2.0",
-    "spatie/once": "^3.1",
-    "alleyinteractive/wp-match-blocks": "^3.0"
+    "alleyinteractive/wp-match-blocks": "^3.0",
+    "spatie/once": "^3.1"
   },
   "require-dev": {
     "alleyinteractive/alley-coding-standards": "^1.0.0",
