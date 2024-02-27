@@ -6,6 +6,12 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 2.1.0
+
+### Changed
+
+- Support use of `WP_CLI_Feature` in WP-CLI packages.
+
 ## 2.0.0
 
 ### Changed
