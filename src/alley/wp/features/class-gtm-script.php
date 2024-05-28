@@ -18,6 +18,8 @@ final class GTM_Script implements Feature {
 	/**
 	 * Constructor.
 	 *
+	 * @phpstan-param array<string, mixed> $data_layer
+	 *
 	 * @param string                          $tag_id     GTM tag ID.
 	 * @param array|stdClass|JsonSerializable $data_layer Initial data layer data.
 	 */
