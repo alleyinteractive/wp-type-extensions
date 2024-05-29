@@ -14,6 +14,7 @@ interface Feature {
 
 - [Conditional_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-conditional-feature.php): Boot a feature only when a condition is met.
 - [Group](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-group.php): Group related features.
+- [GTM_Script](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-gtm-script.php): Add the standard Google Tag Manager script and data layer.
 - [Lazy_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-lazy-feature.php): Instantiate a feature only when called upon.
 - [Quick_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-quick-feature.php): Make a callable a feature.
 - [Template_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-template-feature.php): Boot a feature only when templates load.

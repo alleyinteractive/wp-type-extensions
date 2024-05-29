@@ -6,6 +6,12 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 2.2.0
+
+### Added
+
+- `GTM_Script` feature.
+
 ## 2.1.0
 
 ### Changed
