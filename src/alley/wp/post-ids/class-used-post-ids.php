@@ -11,6 +11,8 @@ use Alley\WP\Types\Post_IDs;
 
 /**
  * Track post IDs that have been used, e.g. while rendering a page.
+ *
+ * @deprecated No longer recommended.
  */
 final class Used_Post_IDs implements Post_IDs {
 	/**

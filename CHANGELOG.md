@@ -4,7 +4,9 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ## Unreleased
 
-Nothing yet.
+### Deprecated
+
+- `Used_Post_IDs` class.
 
 ## 2.2.0
 
