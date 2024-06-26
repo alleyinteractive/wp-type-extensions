@@ -7,6 +7,7 @@
 
 namespace Alley\WP\Post_IDs;
 
+use Alley\WP\Registry;
 use Alley\WP\Types\Post_IDs;
 
 /**
@@ -29,7 +30,9 @@ final class Used_Post_IDs implements Post_IDs {
 	 */
 	public function __construct(
 		private readonly Post_IDs $seed = new Empty_Post_IDs()
-	) {}
+	) {
+		Registry::add( $this );
+	}
 
 	/**
 	 * Post IDs.
@@ -55,5 +58,14 @@ final class Used_Post_IDs implements Post_IDs {
 				$this->ids[ $post_id ] = true;
 			}
 		}
+	}
+
+	/**
+	 * Clear recorded post IDs.
+	 *
+	 * @return void
+	 */
+	public function clear_recorded_post_ids(): void {
+		$this->ids = [];
 	}
 }
