@@ -4,6 +4,10 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ## Unreleased
 
+### Changed
+
+- The minimum PHP version is now 8.2.
+
 ### Deprecated
 
 - `Used_Post_IDs` class.

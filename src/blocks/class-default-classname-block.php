@@ -36,7 +36,9 @@ final class Default_Classname_Block implements Single_Block {
 	/**
 	 * Parsed block.
 	 *
-	 * @return mixed[]
+	 * @phpstan-return array{blockName: ?string, attrs: array<string, mixed>, innerBlocks: array<mixed[]>, innerHTML: string, innerContent: string[]}
+	 *
+	 * @return array
 	 */
 	public function parsed_block(): array {
 		$out = $this->origin->parsed_block();
@@ -60,6 +62,6 @@ final class Default_Classname_Block implements Single_Block {
 	 * @return string
 	 */
 	public function serialized_blocks(): string {
-		return serialize_block( $this->parsed_block() );
+		return serialize_block( $this->parsed_block() ); // @phpstan-ignore-line argument.type
 	}
 }

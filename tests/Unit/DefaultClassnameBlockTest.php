@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Tests\Unit;
 
 use Alley\WP\Blocks\Default_Classname_Block;
 use Alley\WP\Blocks\Named_Block;
