@@ -9,7 +9,7 @@ The library is oriented toward a declarative style of development that makes use
 Install the latest version with:
 
 ```bash
-$ composer require alleyinteractive/wp-type-extensions
+composer require alleyinteractive/wp-type-extensions
 ```
 
 ## Basic usage

@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Tests\Unit;
 
 use Alley\WP\Blocks\Blocks;
 use Alley\WP\Blocks\Inner_Blocks_Prepended;

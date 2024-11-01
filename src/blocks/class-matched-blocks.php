@@ -34,6 +34,6 @@ final class Matched_Blocks implements Serialized_Blocks {
 	public function serialized_blocks(): string {
 		$matched = match_blocks( $this->origin->serialized_blocks(), $this->args );
 
-		return \is_array( $matched ) ? serialize_blocks( $matched ) : '';
+		return \is_array( $matched ) ? serialize_blocks( $matched ) : ''; // @phpstan-ignore-line argument.type
 	}
 }

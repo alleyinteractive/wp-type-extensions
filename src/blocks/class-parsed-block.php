@@ -35,7 +35,9 @@ final class Parsed_Block implements Single_Block {
 	/**
 	 * Parsed block.
 	 *
-	 * @return mixed[]
+	 * @phpstan-return array{blockName: ?string, attrs: array<string, mixed>, innerBlocks: array<mixed[]>, innerHTML: string, innerContent: string[]}
+	 *
+	 * @return array
 	 */
 	public function parsed_block(): array {
 		$attrs         = isset( $this->origin['attrs'] ) && \is_array( $this->origin['attrs'] ) ? $this->origin['attrs'] : [];
@@ -43,13 +45,13 @@ final class Parsed_Block implements Single_Block {
 		$inner_html    = isset( $this->origin['innerHTML'] ) && \is_string( $this->origin['innerHTML'] ) ? $this->origin['innerHTML'] : '';
 		$inner_content = isset( $this->origin['innerContent'] ) && \is_array( $this->origin['innerContent'] ) ? $this->origin['innerContent'] : [];
 
-		return (array) new WP_Block_Parser_Block(
-			$this->block_name(), // @phpstan-ignore-line
-			$attrs,
-			$inner_blocks,
-			$inner_html,
-			$inner_content,
-		);
+		return [
+			'blockName'    => $this->block_name(),
+			'attrs'        => $attrs,
+			'innerBlocks'  => $inner_blocks,
+			'innerHTML'    => $inner_html,
+			'innerContent' => $inner_content,
+		];
 	}
 
 	/**
@@ -58,6 +60,6 @@ final class Parsed_Block implements Single_Block {
 	 * @return string
 	 */
 	public function serialized_blocks(): string {
-		return serialize_block( $this->parsed_block() );
+		return serialize_block( $this->parsed_block() ); // @phpstan-ignore-line argument.type
 	}
 }

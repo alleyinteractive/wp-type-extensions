@@ -21,7 +21,9 @@ interface Single_Block extends Serialized_Blocks {
 	/**
 	 * Parsed block.
 	 *
-	 * @return mixed[]
+	 * @phpstan-return array{blockName: ?string, attrs: array<string, mixed>, innerBlocks: array<mixed[]>, innerHTML: string, innerContent: string[]}
+	 *
+	 * @return array
 	 */
 	public function parsed_block(): array;
 }

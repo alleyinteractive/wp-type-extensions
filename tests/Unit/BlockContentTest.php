@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP;
+namespace Alley\WP\Tests\Unit;
 
 use Alley\WP\Blocks\Block_Content;
 use Mantle\Testkit\Test_Case;
