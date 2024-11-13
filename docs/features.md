@@ -27,6 +27,44 @@ use Alley\WP\Features\Template_Feature;
 // Main plugin features.
 $plugin = new Group();
 
+$plugin->include(
+  new Features\Allowed_Blocks(
+    context: 'core/edit-post',
+    allowed: new FastFailValidatorChain(
+      [
+        new AnyValidator(
+          [
+            // Allow all blocks from WP Curate.
+            new Regex( '/^wp-curate/' ),
+            // Allow these specific other blocks.
+            new OneOf(
+              [
+                'haystack' => [
+                  'core/cover',
+                  'core/embed',
+                  'core/gallery',
+                  'core/group',
+                  'core/heading',
+                  'core/image',
+                  'core/list',
+                  'core/list-item',
+                  'core/paragraph',
+                  'core/quote',
+                ],
+              ],
+            ),
+          ],
+        ),
+        new Not(
+          new Regex( '#^core/post-#' ),
+          'Post template blocks are not allowed in the post editor',
+        ),
+      ],
+    ),
+    registry: WP_Block_Type_Registry::get_instance(),
+  ),
+)
+
 // Load the Simple History plugin.
 $plugin->include(
   new Library\Plugin_Loader(

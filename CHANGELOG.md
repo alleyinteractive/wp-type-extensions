@@ -15,6 +15,7 @@ Nothing yet.
 - `Ordered` feature.
 - `Each_Replaced` serialized blocks class.
 - `Alley\WP\Features\Library` namespace to hold a library of concrete feature implementations.
+- `Allowed_Blocks` library feature.
 - `Block_Content_Filter` library feature.
 - `Plugin_Loader` library feature.
 

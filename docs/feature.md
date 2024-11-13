@@ -25,6 +25,7 @@ All `Features` implementations also implement `Feature`.
 
 The `Library` subnamespace includes concrete implementations of common features. These can be used on their own or as part of a set of features that make up a larger integration.
 
+- [Allowed_Blocks](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-allowed-blocks.php): Limit blocks allowed in the editor to those that are explicitly supported.
 - [Block_Content_Filter](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-block-content-filter.php): Filter block markup in `the_content` for the post being viewed.
 - [GTM_Script](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-gtm-script.php): Add the standard Google Tag Manager script and data layer.
 - [Plugin_Loader](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-plugin-loader.php): Makes the [Alley plugin loader](https://github.com/alleyinteractive/wp-plugin-loader) available in a feature.
