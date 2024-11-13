@@ -5,7 +5,7 @@
  * @package wp-type-extensions
  */
 
-namespace Alley\WP\Features;
+namespace Alley\WP\Features\Library;
 
 use Alley\WP\Types\Feature;
 use JsonSerializable;
