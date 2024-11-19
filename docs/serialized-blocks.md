@@ -13,7 +13,8 @@ interface Serialized_Blocks {
 ## Bundled implementations
 
 - [Blocks](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-blocks.php): Bundle many blocks.
-- [Each_Replaced_Blocks](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-each-replaced-blocks.php): Replace each matched block with other block content.
+- [Each_Appended](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-each-append.php): Append other block content to each matched block.
+- [Each_Replaced](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-each-replaced.php): Replace each matched block with other block content.
 - [Matched_Blocks](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-matched-blocks.php): Blocks matched with `match_blocks()`.
 - [Block_Content](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-block-content.php): Blocks in the given content.
 - [Lazy_Blocks](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/blocks/class-lazy-blocks.php): Instantiate blocks only when called upon.

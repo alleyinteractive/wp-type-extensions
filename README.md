@@ -19,6 +19,7 @@ Learn more about the objects included with Type Extensions in the [documentation
 ## Documentation
 
 - [Feature](docs/feature.md)
+- [Features](docs/features.md)
 - [Post IDs](docs/post-ids.md)
 - [Post Queries](docs/post-queries.md)
 - [Post Query](docs/post-query.md)

@@ -8,17 +8,18 @@
 namespace Alley\WP\Features;
 
 use Alley\WP\Types\Feature;
+use Alley\WP\Types\Features;
 
 /**
  * Group many features.
  */
-final class Group implements Feature {
+final class Group implements Features {
 	/**
 	 * Collected features.
 	 *
 	 * @var Feature[]
 	 */
-	private readonly array $features;
+	private array $features;
 
 	/**
 	 * Set up.
@@ -36,5 +37,14 @@ final class Group implements Feature {
 		foreach ( $this->features as $feature ) {
 			$feature->boot();
 		}
+	}
+
+	/**
+	 * Include features.
+	 *
+	 * @param Feature ...$features Features to include.
+	 */
+	public function include( Feature ...$features ): void {
+		array_push( $this->features, ...$features );
 	}
 }

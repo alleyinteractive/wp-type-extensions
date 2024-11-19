@@ -1,6 +1,6 @@
 <?php
 /**
- * Each_Replaced_Blocks class file
+ * Each_Replaced class file
  *
  * @package wp-type-extensions
  */
@@ -12,7 +12,7 @@ use Alley\WP\Types\Serialized_Blocks;
 /**
  * Replace each matched block with other block content.
  */
-final class Each_Replaced_Blocks implements Serialized_Blocks {
+final class Each_Replaced implements Serialized_Blocks {
 	/**
 	 * Set up.
 	 *

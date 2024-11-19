@@ -4,12 +4,31 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ## Unreleased
 
+Nothing yet.
+
+## 3.0.0
+
+### Added
+
+- `Features` interface.
+- `Effect` feature.
+- `Ordered` feature.
+- `Each_Replaced` serialized blocks class.
+- `Alley\WP\Features\Library` namespace to hold a library of concrete feature implementations.
+- `Allowed_Blocks` library feature.
+- `Block_Content_Filter` library feature.
+- `Plugin_Loader` library feature.
+
 ### Changed
 
 - The minimum PHP version is now 8.2.
+- `Group` class now implements `Features`.
+- `GTM_Script` class moved to feature library.
+- `Each_Appended_Blocks` class renamed `Each_Appended`.
 
-### Deprecated
+### Removed
 
+- `Conditional_Feature` class (use `Effect` instead).
 - `Used_Post_IDs` class.
 
 ## 2.2.0
