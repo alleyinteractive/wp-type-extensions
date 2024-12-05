@@ -92,6 +92,23 @@ $plugin->include(
   ),
 );
 
+// This can also be written using the when() helper.
+$plugin->when(
+  when: fn () => get_current_blog_id() !== 1,
+  then: fn () => new Ordered(
+      first: new Library\Plugin_Loader(
+        plugins: [
+          'block-visibility/block-visibility.php',
+        ],
+      ),
+      then: new Group(
+        new Features\Block_Visibility_Settings(),
+        new Features\Block_Visibility_Custom_Conditions(),
+      ),
+    ),
+  ),
+);
+
 // Load the Google Tag Manager script on templates.
 $plugin->include(
   new Template_Feature(
