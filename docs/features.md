@@ -12,7 +12,7 @@ interface Features extends Feature{
 
 ## Bundled implementations
 
-- [Group](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/alley/wp/features/class-group.php): Group related features.
+- [Group](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-group.php): Group related features.
 
 ## Basic usage
 
