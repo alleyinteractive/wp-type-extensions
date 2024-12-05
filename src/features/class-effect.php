@@ -16,7 +16,7 @@ final class Effect implements Feature {
 	/**
 	 * The condition to check.
 	 *
-	 * @var callable
+	 * @var bool|callable
 	 */
 	private $when;
 
@@ -37,9 +37,9 @@ final class Effect implements Feature {
 	 * Boot the feature.
 	 */
 	public function boot(): void {
-		if ( is_bool( $this->when ) && $this->when === true ) {
+		if ( is_callable( $this->when ) && ( $this->when )() === true ) {
 			$this->then->boot();
-		} elseif ( ( $this->when )() === true ) {
+		} elseif ( is_bool( $this->when ) && true === $this->when ) {
 			$this->then->boot();
 		}
 	}
