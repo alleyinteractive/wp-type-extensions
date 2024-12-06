@@ -3,6 +3,8 @@
  * GroupTest class file.
  *
  * @package wp-type-extensions
+ *
+ * phpcs:disable Squiz.PHP.DisallowMultipleAssignments.Found, WordPress.Security.ValidatedSanitizedInput
  */
 
 namespace Alley\WP\Tests\Feature\Features;
@@ -16,6 +18,9 @@ use Alley\WP\Types\Feature;
  * Tests for Group class.
  */
 class GroupTest extends Test_Case {
+	/**
+	 * Test that group can boot a set of features.
+	 */
 	public function test_it_can_boot_a_group_of_features(): void {
 		$_SERVER['booted_quick_feature']   = false;
 		$_SERVER['booted_feature']         = false;
@@ -24,7 +29,10 @@ class GroupTest extends Test_Case {
 
 		$group = new Group(
 			new Quick_Feature( fn () => $_SERVER['booted_quick_feature'] = true ),
-			new class implements Feature {
+			new class() implements Feature {
+				/**
+				 * Boot the feature.
+				 */
 				public function boot(): void {
 					$_SERVER['booted_feature'] = true;
 				}
