@@ -4,7 +4,9 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ## Unreleased
 
-Nothing yet.
+### Added
+
+- Added `when()` method to `Group` class to conditionally include features without using `Effect`.
 
 ## 3.0.0
 

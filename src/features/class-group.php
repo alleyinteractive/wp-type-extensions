@@ -47,4 +47,15 @@ final class Group implements Features {
 	public function include( Feature ...$features ): void {
 		array_push( $this->features, ...$features );
 	}
+
+	/**
+	 * Include a conditional feature.
+	 *
+	 * @param bool|callable $when The condition to check.
+	 * @param Feature       $then The feature to boot if the condition is met.
+	 * @return void
+	 */
+	public function when( bool|callable $when, Feature $then ): void {
+		$this->include( new Effect( $when, $then ) );
+	}
 }
