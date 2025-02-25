@@ -1,6 +1,6 @@
 <?php
 /**
- * BlocksOfTest class file
+ * BlocksTest class file
  *
  * @package wp-type-extensions
  */
@@ -12,9 +12,9 @@ use Alley\WP\Blocks\Named_Block;
 use Mantle\Testkit\Test_Case;
 
 /**
- * Tests for Blocks_Of.
+ * Tests for Blocks.
  */
-final class BlocksOfTest extends Test_Case {
+final class BlocksTest extends Test_Case {
 	/**
 	 * Test blocks of iterable.
 	 */
