@@ -81,6 +81,5 @@ final class Blocks implements Serialized_Blocks {
 				),
 			)
 		);
-
 	}
 }
