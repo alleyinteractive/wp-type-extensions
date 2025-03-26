@@ -12,6 +12,10 @@ Nothing yet.
 
 - `Blocks::from_parsed_blocks()` secondary constructor for use with an array of parsed blocks.
 
+### Changed
+
+- `GTM_Script` feature now preconnects to `https://www.googletagmanager.com`.
+
 ### Removed
 
 - `Matched_Blocks` class, now part of the [Match Blocks](https://packagist.org/packages/alleyinteractive/wp-match-blocks) library.
