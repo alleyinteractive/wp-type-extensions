@@ -17,7 +17,9 @@ final class Parsed_Block implements Single_Block {
 	/**
 	 * Set up.
 	 *
-	 * @param mixed[] $origin Parsed block.
+	 * @phpstan-param array<mixed> $origin
+	 *
+	 * @param array $origin Parsed block.
 	 */
 	public function __construct(
 		private readonly array $origin,

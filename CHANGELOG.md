@@ -6,6 +6,16 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 4.0.0
+
+### Added
+
+- `Blocks::from_parsed_blocks()` secondary constructor for use with an array of parsed blocks.
+
+### Removed
+
+- `Matched_Blocks` class, now part of the [Match Blocks](https://packagist.org/packages/alleyinteractive/wp-match-blocks) library.
+
 ## 3.0.0
 
 ### Added

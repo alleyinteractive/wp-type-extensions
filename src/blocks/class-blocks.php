@@ -65,4 +65,23 @@ final class Blocks implements Serialized_Blocks {
 			}
 		);
 	}
+
+	/**
+	 * Constructor for creating blocks from a set of parsed blocks.
+	 *
+	 * @phpstan-param array<mixed>[] $blocks
+	 *
+	 * @param array[] $blocks Parsed blocks.
+	 * @return Serialized_Blocks
+	 */
+	public static function from_parsed_blocks( array $blocks ): Serialized_Blocks {
+		return new Lazy_Blocks(
+			fn () => new Blocks(
+				...array_map(
+					fn ( $block ) => new Parsed_Block( $block ),
+					$blocks,
+				),
+			)
+		);
+	}
 }
