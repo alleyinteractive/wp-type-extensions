@@ -32,8 +32,38 @@ final class GTM_Script implements Feature {
 	 * Boot the feature.
 	 */
 	public function boot(): void {
+		add_filter( 'wp_resource_hints', [ $this, 'filter_wp_resource_hints' ], 10, 2 );
 		add_action( 'wp_head', [ $this, 'render_head' ] );
 		add_action( 'wp_body_open', [ $this, 'render_body' ] );
+	}
+
+	/**
+	 * Filters domains and URLs for resource hints of the given relation type.
+	 *
+	 * @phpstan-param string[]|array{href: string}[] $urls
+	 * @phpstan-return string[]|array{href: string}[]
+	 *
+	 * @param array  $urls          Array of resources and their attributes, or URLs to print for resource hints.
+	 * @param string $relation_type The relation type the URLs are printed for.
+	 * @return array
+	 */
+	public function filter_wp_resource_hints( $urls, $relation_type ) {
+		if ( 'preconnect' === $relation_type ) {
+			if ( ! is_array( $urls ) ) {
+				$urls = [];
+			}
+
+			$urls = array_merge(
+				$urls,
+				[
+					[
+						'href' => 'https://www.googletagmanager.com',
+					],
+				],
+			);
+		}
+
+		return $urls;
 	}
 
 	/**
