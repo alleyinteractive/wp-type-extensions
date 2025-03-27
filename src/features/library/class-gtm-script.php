@@ -59,7 +59,7 @@ final class GTM_Script implements Feature {
 					[
 						'href' => 'https://www.googletagmanager.com',
 					],
-				]
+				],
 			);
 		}
 
