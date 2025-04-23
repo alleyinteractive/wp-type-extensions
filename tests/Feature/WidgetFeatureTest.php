@@ -5,6 +5,8 @@
  * @package wp-type-extensions
  */
 
+declare(strict_types=1);
+
 namespace Alley\WP\Tests\Feature;
 
 use Alley\WP\Features\Widget_Feature;
@@ -98,5 +100,15 @@ class WidgetFeatureTest extends Test_Case {
 		unregister_widget( $widget_class_2::class );
 
 		$this->assertArrayNotHasKey( $widget_class_2::class, $wp_widget_factory->widgets );
+	}
+
+	public function test_register_a_widget_with_invalid(): void {
+		$widget_feature = new Widget_Features( '' );
+		$widget_feature->boot();
+
+		// Register widgets.
+		do_action( 'widgets_init' );
+
+		$this->setExpectedIncorrectUsage( '{closure:Alley\WP\Features\Widget_Features::boot():49}' );
 	}
 }

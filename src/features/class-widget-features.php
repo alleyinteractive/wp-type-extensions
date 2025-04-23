@@ -50,12 +50,12 @@ final class Widget_Features implements Feature {
 				foreach ( $this->widgets as $widget_class ) {
 					if ( $widget_class instanceof WP_Widget ) {
 						register_widget( $widget_class::class );
-					} elseif ( is_string( $widget_class ) ) {
+					} elseif ( is_string( $widget_class ) && ! empty( $widget_class ) ) {
 						register_widget( $widget_class );
 					} else {
 						_doing_it_wrong(
 							__METHOD__,
-							esc_html__( 'To register a Widget Feature, you need to pass a WP_Widget or string.', 'wp-type-extensions' ),
+							esc_html__( 'To register widget features, you need to pass a WP_Widget or string.', 'wp-type-extensions' ),
 							'1.0.0'
 						);
 					}
