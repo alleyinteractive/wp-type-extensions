@@ -28,6 +28,9 @@
   <!-- In effect, set the minimum supported version of WordPress to the latest version. -->
   <config name="minimum_supported_wp_version" value="99.0"/>
 
+  <!-- Configure the PHP version -->
+  <config name="testVersion" value="8.2-" />
+
   <!-- Define the prefixes that can be used by the plugin -->
   <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
     <properties>

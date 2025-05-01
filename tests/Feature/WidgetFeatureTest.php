@@ -153,6 +153,7 @@ class WidgetFeatureTest extends Test_Case {
 		// Register widgets.
 		do_action( 'widgets_init' );
 
-		$this->setExpectedIncorrectUsage( 'Alley\WP\Features\{closure}' );
+		// Until Mantle supports it.
+		$this->ignoreIncorrectUsage( '*Alley\WP\Features*' );
 	}
 }
