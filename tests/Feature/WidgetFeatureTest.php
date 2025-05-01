@@ -2,6 +2,8 @@
 /**
  * WidgetFeatureTest class file
  *
+ * @phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+ *
  * @package wp-type-extensions
  */
 
@@ -19,14 +21,29 @@ use WP_Widget;
  */
 class WidgetFeatureTest extends Test_Case {
 
+	/**
+	 * Test that a single widget feature is registered correctly.
+	 */
 	public function test_register_a_single_widget_feature(): void {
 		global $wp_widget_factory;
 
-		$widget_class = new class extends WP_Widget {
+		$widget_class = new class() extends WP_Widget {
+
+			/**
+			 * Constructor.
+			 */
 			public function __construct() {
 				parent::__construct( 'test_widget', 'Test Widget' );
 			}
 
+			/**
+			 * Widget output.
+			 *
+			 * @param array  $args Args.
+			 * @param object $instance Widget instance.
+			 *
+			 * @return string
+			 */
 			public function widget( $args, $instance ): string {
 				echo '<div>Test Widget</div>';
 				return '';
@@ -55,22 +72,46 @@ class WidgetFeatureTest extends Test_Case {
 	public function test_register_several_widget_features(): void {
 		global $wp_widget_factory;
 
-		$widget_class_1 = new class extends WP_Widget {
+		$widget_class_1 = new class() extends WP_Widget {
+
+			/**
+			 * Constructor.
+			 */
 			public function __construct() {
 				parent::__construct( 'test_widget_1', 'Test Widget 1' );
 			}
 
+			/**
+			 * Widget output.
+			 *
+			 * @param array  $args Args.
+			 * @param object $instance Widget instance.
+			 *
+			 * @return string
+			 */
 			public function widget( $args, $instance ): string {
 				echo '<div>Test Widget 1</div>';
 				return '';
 			}
 		};
 
-		$widget_class_2 = new class extends WP_Widget {
+		$widget_class_2 = new class() extends WP_Widget {
+
+			/**
+			 * Constructor.
+			 */
 			public function __construct() {
 				parent::__construct( 'test_widget_2', 'Test Widget 2' );
 			}
 
+			/**
+			 * Widget output.
+			 *
+			 * @param array  $args Args.
+			 * @param object $instance Widget instance.
+			 *
+			 * @return string
+			 */
 			public function widget( $args, $instance ): string {
 				echo '<div>Test Widget 2</div>';
 				return '';
@@ -102,6 +143,9 @@ class WidgetFeatureTest extends Test_Case {
 		$this->assertArrayNotHasKey( $widget_class_2::class, $wp_widget_factory->widgets );
 	}
 
+	/**
+	 * Test that an exception is thrown when a widget class is not valid.
+	 */
 	public function test_register_a_widget_with_invalid(): void {
 		$widget_feature = new Widget_Features( '' );
 		$widget_feature->boot();
