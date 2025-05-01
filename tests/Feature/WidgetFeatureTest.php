@@ -153,6 +153,6 @@ class WidgetFeatureTest extends Test_Case {
 		// Register widgets.
 		do_action( 'widgets_init' );
 
-		$this->setExpectedIncorrectUsage( '{closure:Alley\WP\Features\Widget_Features::boot():49}' );
+		$this->setExpectedIncorrectUsage( 'Alley\WP\Features\{closure}' );
 	}
 }
