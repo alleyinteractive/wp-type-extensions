@@ -8,7 +8,6 @@
 namespace Alley\WP\Blocks;
 
 use Alley\WP\Types\Single_Block;
-use WP_Block_Parser_Block;
 
 /**
  * A single parsed block.
@@ -17,9 +16,7 @@ final class Parsed_Block implements Single_Block {
 	/**
 	 * Set up.
 	 *
-	 * @phpstan-param array<mixed> $origin
-	 *
-	 * @param array $origin Parsed block.
+	 * @param array<mixed> $origin Parsed block.
 	 */
 	public function __construct(
 		private readonly array $origin,
@@ -37,7 +34,13 @@ final class Parsed_Block implements Single_Block {
 	/**
 	 * Parsed block.
 	 *
-	 * @phpstan-return array{blockName: ?string, attrs: array<string, mixed>, innerBlocks: array<mixed[]>, innerHTML: string, innerContent: string[]}
+	 * @phpstan-return array{
+	 *     blockName: ?string,
+	 *     attrs: array<string|int, mixed>,
+	 *     innerBlocks: array<int|string, mixed>,
+	 *     innerHTML: string,
+	 *     innerContent: array<int|string, mixed>
+	 * }
 	 *
 	 * @return array
 	 */

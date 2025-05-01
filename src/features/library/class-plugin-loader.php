@@ -17,7 +17,7 @@ final class Plugin_Loader implements Feature {
 	/**
 	 * Constructor.
 	 *
-	 * @param string[] $plugins List of plugins to load.
+	 * @param array<int, string> $plugins List of plugins to load.
 	 */
 	public function __construct(
 		private readonly array $plugins,
