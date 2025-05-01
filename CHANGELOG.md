@@ -4,7 +4,11 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ## Unreleased
 
-Nothing yet.
+### Added
+
+- `Widget_Feature` feature. #32
+- `Widget_Features` feature. #32
+- Ignore `.idea` dir from source control for PHPStorm users.
 
 ## 4.0.0
 
