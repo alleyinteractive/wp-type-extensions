@@ -6,7 +6,7 @@ The `Features` interface describes multiple project features. This interface ext
 
 ```php
 interface Features extends Feature{
-	public function include( Feature ...$features ): void;
+	public function include( Feature $feature ): void;
 }
 ```
 
