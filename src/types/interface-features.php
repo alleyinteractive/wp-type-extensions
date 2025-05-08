@@ -12,9 +12,9 @@ namespace Alley\WP\Types;
  */
 interface Features extends Feature {
 	/**
-	 * Include features.
+	 * Include a feature.
 	 *
-	 * @param Feature ...$features Features to include.
+	 * @param Feature $feature Feature to include.
 	 */
-	public function include( Feature ...$features ): void;
+	public function include( Feature $feature ): void;
 }

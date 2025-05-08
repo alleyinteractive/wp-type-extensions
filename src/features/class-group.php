@@ -40,11 +40,11 @@ final class Group implements Features {
 	}
 
 	/**
-	 * Include features.
+	 * Include a feature.
 	 *
-	 * @param Feature ...$features Features to include.
+	 * @param Feature $feature Feature to include.
 	 */
-	public function include( Feature ...$features ): void {
-		array_push( $this->features, ...$features );
+	public function include( Feature $feature ): void {
+		$this->features[] = $feature;
 	}
 }
