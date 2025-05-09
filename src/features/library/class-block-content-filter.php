@@ -56,7 +56,6 @@ final class Block_Content_Filter implements Feature {
 		// Skip if 'the_content' is running on non-block content or on content other than the post being viewed.
 		if (
 			$post
-			&& is_callable( $this->block_merge )
 			&& is_single( $post->ID )
 			&& has_blocks( $content )
 		) {

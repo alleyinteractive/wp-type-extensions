@@ -13,7 +13,7 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ### Changed
 
-- PHPStan: upgraded to 2.0. [#37](https://github.com/alleyinteractive/wp-type-extensions/issues/37)
+- PHPStan: upgraded to 2.0.
 - PHPCS: The minimum PHP version is now 8.2.
 - Unit test: `WidgetFeatureTest` test works por PHP 8.3 and 8.4.
 
