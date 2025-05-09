@@ -44,12 +44,17 @@ final class Allowed_Blocks implements Feature {
 	 * @param WP_Block_Editor_Context $block_editor_context The current block editor context.
 	 * @return bool|string[] Updated block type slugs.
 	 */
-	public function filter_allowed_block_types( $allowed_block_types, $block_editor_context ) {
+	public function filter_allowed_block_types( $allowed_block_types, $block_editor_context ): array|bool {
 		if ( in_array( $block_editor_context->name, (array) $this->context, true ) ) {
+			/**
+			 * Tell PHPStan the returned value is an array.
+			 *
+			 * @var string[] $updated
+			 */
 			$updated = array_reduce(
 				$this->registry->get_all_registered(),
 				function ( array $carry, WP_Block_Type $type ) {
-					if ( $this->allowed->isValid( $type->name ) ) {
+					if ( $this->allowed->isValid( $type->name ) && is_string( $type->name ) ) {
 						$carry[] = $type->name;
 					}
 
@@ -63,7 +68,9 @@ final class Allowed_Blocks implements Feature {
 				array_push( $updated, ...array_filter( $allowed_block_types, [ $this->allowed, 'isValid' ] ) );
 			}
 
-			$allowed_block_types = $updated;
+			if ( is_array( $updated ) ) {
+				$allowed_block_types = $updated;
+			}
 		}
 
 		return $allowed_block_types;
