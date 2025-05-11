@@ -18,6 +18,8 @@ final class Block_Content_Filter implements Feature {
 	/**
 	 * Callback to merge blocks.
 	 *
+	 * @phpstan-var callable(Serialized_Blocks $post_content): Serialized_Blocks
+	 *
 	 * @var callable
 	 */
 	private $block_merge;
@@ -48,12 +50,20 @@ final class Block_Content_Filter implements Feature {
 	 * @param string $content Content of the current post.
 	 * @return string Updated content.
 	 */
-	public function filter_the_content( $content ) {
+	public function filter_the_content( string $content ): string {
 		$post = get_post();
 
 		// Skip if 'the_content' is running on non-block content or on content other than the post being viewed.
-		if ( $post && is_single( $post->ID ) && has_blocks( $content ) ) {
+		if (
+			$post
+			&& is_single( $post->ID )
+			&& has_blocks( $content )
+		) {
 			$content = ( $this->block_merge )( new Block_Content( $content ) )->serialized_blocks();
+		}
+
+		if ( ! is_string( $content ) ) {
+			$content = '';
 		}
 
 		return $content;

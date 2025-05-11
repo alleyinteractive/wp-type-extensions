@@ -58,7 +58,7 @@ final class WP_Query_Post_IDs implements Post_IDs {
 		}
 
 		// fields => 'id=>parent'.
-		if ( ( $value instanceof \stdClass ) && isset( $value->ID ) ) {
+		if ( ( $value instanceof \stdClass ) && isset( $value->ID ) && is_numeric( $value->ID ) ) {
 			$id = $value->ID;
 		}
 

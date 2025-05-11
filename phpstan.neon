@@ -4,6 +4,12 @@ includes:
 parameters:
 	# Level 9 is the highest level
 	level: max
+	tips:
+	  treatPhpDocTypesAsCertain: false
 
 	paths:
 		- src/
+
+	ignoreErrors:
+	  -
+	      identifier: function.alreadyNarrowedType
