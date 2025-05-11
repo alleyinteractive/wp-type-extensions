@@ -6,16 +6,13 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ### Added
 
-- `Widget_Feature` feature. #32
-- `Widget_Features` feature. #32
-- Ignore `.idea` dir from source control for PHPStorm users.
-- CI: support PHP 8.4. #35
+- `Widget_Feature` feature.
+- `Widget_Features` feature.
+- PHP 8.4 support.
 
 ### Changed
 
-- PHPStan: upgraded to 2.0.
-- PHPCS: The minimum PHP version is now 8.2.
-- Unit test: `WidgetFeatureTest` test works por PHP 8.3 and 8.4.
+- `Features::include()` no longer accepts a spread of individual `Feature` instances. Use something more specific like `Group` or `Ordered` to include multiple features at once.
 
 ## 4.0.0
 
