@@ -13,7 +13,7 @@
     "php": "^8.2",
     "alleyinteractive/laminas-validator-extensions": "^2.0",
     "alleyinteractive/wp-match-blocks": "^3.0",
-    "alleyinteractive/wp-plugin-loader": "^0.1.5",
+    "alleyinteractive/wp-plugin-loader": "^0.1.5 || ^1.0",
     "spatie/once": "^3.1"
   },
   "require-dev": {
