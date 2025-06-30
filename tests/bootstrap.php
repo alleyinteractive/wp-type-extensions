@@ -10,4 +10,6 @@
  * @package wp-type-extensions
  */
 
-\Mantle\Testing\install();
+\Mantle\Testing\manager()
+	->with_sqlite()
+	->install();
