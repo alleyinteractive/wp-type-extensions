@@ -12,6 +12,7 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ### Changed
 
+- Adjusted `alleyinteractive/wp-plugin-loader` to support version 1.0.
 - `Features::include()` no longer accepts a spread of individual `Feature` instances. Use something more specific like `Group` or `Ordered` to include multiple features at once.
 
 ## 4.0.0
