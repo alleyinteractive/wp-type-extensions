@@ -12,7 +12,6 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ### Changed
 
-- Adjusted `alleyinteractive/wp-plugin-loader` to support version 1.0.
 - `Features::include()` no longer accepts a spread of individual `Feature` instances. Use something more specific like `Group` or `Ordered` to include multiple features at once.
 
 ## 4.0.0
@@ -28,6 +27,10 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 ### Removed
 
 - `Matched_Blocks` class, now part of the [Match Blocks](https://packagist.org/packages/alleyinteractive/wp-match-blocks) library.
+
+## 3.1.0
+
+- Adjusted `alleyinteractive/wp-plugin-loader` to support version 1.0.
 
 ## 3.0.0
 
