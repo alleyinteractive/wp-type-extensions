@@ -13,6 +13,7 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 ### Changed
 
 - `Features::include()` no longer accepts a spread of individual `Feature` instances. Use something more specific like `Group` or `Ordered` to include multiple features at once.
+- `WP_CLI_Feature` now hooks into `cli_init` at priority `1`.
 
 ## 4.0.0
 

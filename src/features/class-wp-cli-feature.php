@@ -28,7 +28,8 @@ final class WP_CLI_Feature implements Feature {
 	 */
 	public function boot(): void {
 		if ( function_exists( 'add_action' ) ) {
-			add_action( 'cli_init', [ $this->origin, 'boot' ] );
+			// Use an early priority to allow the origin to use 'cli_init' at the default priority.
+			add_action( 'cli_init', [ $this->origin, 'boot' ], 1 );
 		} elseif ( class_exists( 'WP_CLI' ) ) {
 			/*
 			 * This is being invoked in a WP-CLI package or in a similar context where
