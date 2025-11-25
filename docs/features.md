@@ -27,67 +27,23 @@ use Alley\WP\Features\Template_Feature;
 // Main plugin features.
 $plugin = new Group();
 
-$plugin->include(
-  new Features\Allowed_Blocks(
-    context: 'core/edit-post',
-    allowed: new FastFailValidatorChain(
-      [
-        new AnyValidator(
-          [
-            // Allow all blocks from WP Curate.
-            new Regex( '/^wp-curate/' ),
-            // Allow these specific other blocks.
-            new OneOf(
-              [
-                'haystack' => [
-                  'core/cover',
-                  'core/embed',
-                  'core/gallery',
-                  'core/group',
-                  'core/heading',
-                  'core/image',
-                  'core/list',
-                  'core/list-item',
-                  'core/paragraph',
-                  'core/quote',
-                ],
-              ],
-            ),
-          ],
-        ),
-        new Not(
-          new Regex( '#^core/post-#' ),
-          'Post template blocks are not allowed in the post editor',
-        ),
-      ],
-    ),
-    registry: WP_Block_Type_Registry::get_instance(),
-  ),
-)
-
 // Load the Simple History plugin.
 $plugin->include(
-  new Library\Plugin_Loader(
-    plugins: [
-      'simple-history/index.php',
-    ],
+  new Quick_Feature(
+    fn () => wpcom_vip_load_plugin( 'simple-history/index.php' ),
   ),
 );
 
 // Load the Block Visibility plugin, then related features, except on the main site in the network.
-$plugin->include(
-  new Effect(
-    when: fn () => get_current_blog_id() !== 1,
-    then: new Ordered(
-      first: new Library\Plugin_Loader(
-        plugins: [
-          'block-visibility/block-visibility.php',
-        ],
-      ),
-      then: new Group(
-        new Features\Block_Visibility_Settings(),
-        new Features\Block_Visibility_Custom_Conditions(),
-      ),
+$feature = new Effect(
+  when: fn () => get_current_blog_id() !== 1,
+  then: new Ordered(
+    first: new Quick_Feature(
+      fn () => wpcom_vip_load_plugin( 'block-visibility/block-visibility.php' ),
+    ),
+    then: new Group(
+      new Features\Block_Visibility_Settings(),
+      new Features\Block_Visibility_Custom_Conditions(),
     ),
   ),
 );
@@ -96,7 +52,7 @@ $plugin->include(
 $plugin->include(
   new Template_Feature(
     origin: new Lazy_Feature(
-      fn () => new Library\GTM_Script(
+      fn () => new Features\GTM_Script(
         gtm_id: 'GTM-XXXXXXX',
         data_layer: [
           'pageType' => is_page() ? 'page' : 'post',

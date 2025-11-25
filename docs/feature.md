@@ -21,15 +21,6 @@ interface Feature {
 
 All `Features` implementations also implement `Feature`.
 
-## Feature library
-
-The `Library` subnamespace includes concrete implementations of common features. These can be used on their own or as part of a set of features that make up a larger integration.
-
-- [Allowed_Blocks](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/library/class-allowed-blocks.php): Limit blocks allowed in the editor to those that are explicitly supported.
-- [Block_Content_Filter](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/library/class-block-content-filter.php): Filter block markup in `the_content` for the post being viewed.
-- [GTM_Script](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/library/class-gtm-script.php): Add the standard Google Tag Manager script and data layer.
-- [Plugin_Loader](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/library/class-plugin-loader.php): Makes the [Alley plugin loader](https://github.com/alleyinteractive/wp-plugin-loader) available in a feature.
-
 ## Basic usage
 
 See the [documentation for the Features interface](./features.md) for a more comprehensive example.
@@ -38,17 +29,15 @@ See the [documentation for the Features interface](./features.md) for a more com
 use Alley\WP\Features\Effect;
 use Alley\WP\Features\Group;
 use Alley\WP\Features\Lazy_Feature;
-use Alley\WP\Features\Library;
 use Alley\WP\Features\Ordered;
+use Alley\WP\Features\Quick_Feature;
 use Alley\WP\Features\Template_Feature;
 
 $feature = new Effect(
   when: fn () => get_current_blog_id() !== 1,
   then: new Ordered(
-    first: new Library\Plugin_Loader(
-      plugins: [
-        'block-visibility/block-visibility.php',
-      ],
+    first: new Quick_Feature(
+      fn () => wpcom_vip_load_plugin( 'block-visibility/block-visibility.php' ),
     ),
     then: new Group(
       new Features\Block_Visibility_Settings(),
