@@ -17,7 +17,7 @@ interface Feature {
 - [Ordered](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-ordered.php): Boot features in a guaranteed order.
 - [Quick_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-quick-feature.php): Make a callable a feature.
 - [Template_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-template-feature.php): Boot a feature only when templates load.
-- [WP_CLI_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-wp-cli-feature.php): Boot a feature only WP-CLI loads.
+- [WP_CLI_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-wp-cli-feature.php): Boot a feature only when WP-CLI loads.
 
 All `Features` implementations also implement `Feature`.
 
