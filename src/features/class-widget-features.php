@@ -70,6 +70,12 @@ final class Widget_Features implements Feature {
 	 * @param WP_Widget<array<string, mixed>>[]|WP_Widget<array<string, mixed>>|string|string[] ...$widgets Widgets to include.
 	 */
 	public function include( ...$widgets ): void {
-		array_push( $this->widgets, ...$widgets );
+		foreach ( $widgets as $widget ) {
+			if ( is_array( $widget ) ) {
+				array_push( $this->widgets, ...$widget );
+			} else {
+				$this->widgets[] = $widget;
+			}
+		}
 	}
 }
