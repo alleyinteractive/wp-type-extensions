@@ -58,6 +58,6 @@ final class Named_Block implements Single_Block {
 	 * @return string
 	 */
 	public function serialized_blocks(): string {
-		return serialize_block( $this->parsed_block() ); // @phpstan-ignore-line argument.type
+		return serialize_block( $this->parsed_block() );
 	}
 }
