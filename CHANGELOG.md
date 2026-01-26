@@ -6,6 +6,12 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 4.1.0
+
+### Changed
+
+- Adjusted `alleyinteractive/wp-plugin-loader` to support version 1.0.
+
 ## 4.0.0
 
 ### Added
