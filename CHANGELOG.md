@@ -19,6 +19,12 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 - All feature implementations under the `Alley\WP\Features\Library` namespace. Copy these directly into your projects to use and modify them.
 
+## 4.1.0
+
+### Changed
+
+- Adjusted `alleyinteractive/wp-plugin-loader` to support version 1.0.
+
 ## 4.0.0
 
 ### Added
