@@ -37,7 +37,7 @@ final class Parsed_Block implements Single_Block {
 	 * @phpstan-return array{
 	 *     blockName: ?string,
 	 *     attrs: array<string|int, mixed>,
-	 *     innerBlocks: array<int|string, mixed>,
+	 *     innerBlocks: array<int|string, array<int|string, mixed>>,
 	 *     innerHTML: string,
 	 *     innerContent: array<int|string, mixed>
 	 * }
@@ -45,8 +45,11 @@ final class Parsed_Block implements Single_Block {
 	 * @return array
 	 */
 	public function parsed_block(): array {
-		$attrs         = isset( $this->origin['attrs'] ) && \is_array( $this->origin['attrs'] ) ? $this->origin['attrs'] : [];
-		$inner_blocks  = isset( $this->origin['innerBlocks'] ) && \is_array( $this->origin['innerBlocks'] ) ? $this->origin['innerBlocks'] : [];
+		$attrs = isset( $this->origin['attrs'] ) && \is_array( $this->origin['attrs'] ) ? $this->origin['attrs'] : [];
+
+		$inner_blocks = isset( $this->origin['innerBlocks'] ) && \is_array( $this->origin['innerBlocks'] ) ? $this->origin['innerBlocks'] : [];
+		$inner_blocks = array_filter( $inner_blocks, fn ( mixed $i ): bool => is_array( $i ) );
+
 		$inner_html    = isset( $this->origin['innerHTML'] ) && \is_string( $this->origin['innerHTML'] ) ? $this->origin['innerHTML'] : '';
 		$inner_content = isset( $this->origin['innerContent'] ) && \is_array( $this->origin['innerContent'] ) ? $this->origin['innerContent'] : [];
 
