@@ -10,7 +10,7 @@ namespace Alley\WP\Filter_Value;
 use Alley\WP\Types\Filter_Value;
 
 /**
- * A filter that merges a value onto an array.
+ * A filter that pushes a value onto an array.
  */
 final class Push_Filter implements Filter_Value {
 	/**

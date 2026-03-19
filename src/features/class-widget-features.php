@@ -30,7 +30,7 @@ final class Widget_Features implements Feature {
 	/**
 	 * Constructor.
 	 *
-	 * @phpstan-param class-string<WP_Widget>|WP_Widget|array<class-string<WP_Widget>|WP_Widget> $widgets
+	 * @phpstan-param class-string<WP_Widget>|WP_Widget|array<class-string<WP_Widget>|WP_Widget> ...$widgets
 	 *
 	 * @param string|string[]|WP_Widget|WP_Widget[] ...$widgets Widgets.
 	 */
@@ -71,7 +71,7 @@ final class Widget_Features implements Feature {
 	/**
 	 * Include widgets.
 	 *
-	 * @phpstan-param class-string<WP_Widget>|WP_Widget|array<class-string<WP_Widget>|WP_Widget> $widgets
+	 * @phpstan-param class-string<WP_Widget>|WP_Widget|array<class-string<WP_Widget>|WP_Widget> ...$widgets
 	 *
 	 * @param string|string[]|WP_Widget|WP_Widget[] ...$widgets Widgets to include.
 	 */
