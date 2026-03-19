@@ -10,6 +10,7 @@ Nothing yet.
 
 ### Added
 
+- `Term` interface.
 - `By_Default` feature.
 - `Widget_Feature` feature.
 - `Widget_Features` feature.
