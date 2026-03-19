@@ -23,6 +23,7 @@ Nothing yet.
 ### Changed
 
 - `Features::include()` no longer accepts a spread of individual `Feature` instances. Use something more specific like `Group` or `Ordered` to include multiple features at once.
+- `Post_IDs_Once` class renamed `Memoized_Post_IDs`.
 - `WP_CLI_Feature` now hooks into `cli_init` at priority `1`.
 
 ### Removed
