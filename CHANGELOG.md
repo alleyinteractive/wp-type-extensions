@@ -4,6 +4,8 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ## Unreleased
 
+Nothing yet.
+
 ### Added
 
 - `Widget_Feature` feature.
@@ -18,6 +20,7 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 ### Removed
 
 - All feature implementations under the `Alley\WP\Features\Library` namespace. Copy these directly into your projects to use and modify them.
+- `Default_Classname_Block` class.
 
 ## 4.1.0
 
