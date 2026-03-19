@@ -10,6 +10,7 @@ Nothing yet.
 
 ### Added
 
+- `Process` interface.
 - `Term` interface.
 - `By_Default` feature.
 - `Widget_Feature` feature.
