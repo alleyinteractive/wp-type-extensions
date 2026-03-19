@@ -10,11 +10,14 @@ Nothing yet.
 
 ### Added
 
+- `Filter_Value` interface.
 - `Process` interface.
 - `Term` interface.
 - `By_Default` feature.
 - `Widget_Feature` feature.
 - `Widget_Features` feature.
+- `Merge_Filter` class.
+- `Push_Filter` class.
 - PHP 8.5 support.
 
 ### Changed
