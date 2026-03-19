@@ -6,11 +6,13 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 5.0.0
+
 ### Added
 
 - `Widget_Feature` feature.
 - `Widget_Features` feature.
-- PHP 8.4 support.
+- PHP 8.5 support.
 
 ### Changed
 
