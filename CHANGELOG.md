@@ -10,6 +10,7 @@ Nothing yet.
 
 ### Added
 
+- `By_Default` feature.
 - `Widget_Feature` feature.
 - `Widget_Features` feature.
 - PHP 8.5 support.
