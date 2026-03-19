@@ -20,11 +20,14 @@ Learn more about the objects included with Type Extensions in the [documentation
 
 - [Feature](docs/feature.md)
 - [Features](docs/features.md)
+- [Filter_Value](docs/filter-value.md)
 - [Post IDs](docs/post-ids.md)
 - [Post Queries](docs/post-queries.md)
 - [Post Query](docs/post-query.md)
+- [Process](docs/process.md)
 - [Serialized Blocks](docs/serialized-blocks.md)
 - [Single Block](docs/single-block.md)
+- [Term](docs/term.md)
 
 ## About
 

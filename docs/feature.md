@@ -12,11 +12,14 @@ interface Feature {
 
 ## Bundled implementations
 
+- [By_Default](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-by-default.php): Boot a feature unless a condition is true.
 - [Effect](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-effect.php): Boot a feature as an effect of a condition being true.
 - [Lazy_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-lazy-feature.php): Instantiate a feature only when called upon.
 - [Ordered](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-ordered.php): Boot features in a guaranteed order.
 - [Quick_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-quick-feature.php): Make a callable a feature.
 - [Template_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-template-feature.php): Boot a feature only when templates load.
+- [Widget_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-widget-feature.php): Register a single widget.
+- [Widget_Features](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-widget-features.php): Register multiple widgets.
 - [WP_CLI_Feature](https://github.com/alleyinteractive/wp-type-extensions/blob/main/src/features/class-wp-cli-feature.php): Boot a feature only when WP-CLI loads.
 
 All `Features` implementations also implement `Feature`.
