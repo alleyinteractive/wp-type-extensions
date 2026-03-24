@@ -49,6 +49,7 @@ final class Parsed_Block implements Single_Block {
 
 		$inner_blocks = isset( $this->origin['innerBlocks'] ) && \is_array( $this->origin['innerBlocks'] ) ? $this->origin['innerBlocks'] : [];
 		$inner_blocks = array_filter( $inner_blocks, fn ( mixed $i ): bool => is_array( $i ) );
+		$inner_blocks = array_values( $inner_blocks );
 
 		$inner_html    = isset( $this->origin['innerHTML'] ) && \is_string( $this->origin['innerHTML'] ) ? $this->origin['innerHTML'] : '';
 		$inner_content = isset( $this->origin['innerContent'] ) && \is_array( $this->origin['innerContent'] ) ? $this->origin['innerContent'] : [];
