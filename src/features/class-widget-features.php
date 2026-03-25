@@ -21,14 +21,18 @@ final class Widget_Features implements Feature {
 	/**
 	 * Widgets to include.
 	 *
-	 * @var WP_Widget<array<string, mixed>>[]|string[]
+	 * @phpstan-var array<class-string<WP_Widget>|WP_Widget>
+	 *
+	 * @var class-string<WP_Widget>[]|WP_Widget[]
 	 */
 	private array $widgets = [];
 
 	/**
 	 * Constructor.
 	 *
-	 * @param WP_Widget<array<string, mixed>>[]|WP_Widget<array<string, mixed>>|string|string[] ...$widgets Widgets.
+	 * @phpstan-param class-string<WP_Widget>|WP_Widget|array<class-string<WP_Widget>|WP_Widget> ...$widgets
+	 *
+	 * @param string|string[]|WP_Widget|WP_Widget[] ...$widgets Widgets.
 	 */
 	public function __construct( ...$widgets ) {
 		foreach ( $widgets as $widget ) {
@@ -67,7 +71,9 @@ final class Widget_Features implements Feature {
 	/**
 	 * Include widgets.
 	 *
-	 * @param WP_Widget<array<string, mixed>>[]|WP_Widget<array<string, mixed>>|string|string[] ...$widgets Widgets to include.
+	 * @phpstan-param class-string<WP_Widget>|WP_Widget|array<class-string<WP_Widget>|WP_Widget> ...$widgets
+	 *
+	 * @param string|string[]|WP_Widget|WP_Widget[] ...$widgets Widgets to include.
 	 */
 	public function include( ...$widgets ): void {
 		foreach ( $widgets as $widget ) {

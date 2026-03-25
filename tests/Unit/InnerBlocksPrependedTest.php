@@ -47,7 +47,7 @@ final class InnerBlocksPrependedTest extends Test_Case {
 		);
 
 		$this->assertSame(
-			<<<HTML
+			<<<'HTML'
 <!-- wp:foo/qux --><!-- wp:foo/bar -->Bar<!-- /wp:foo/bar --><!-- wp:foo/baz -->Baz<!-- /wp:foo/baz --><!-- wp:foo/bat -->Bat<!-- /wp:foo/bat -->Qux<!-- /wp:foo/qux -->
 HTML,
 			$actual->serialized_blocks(),

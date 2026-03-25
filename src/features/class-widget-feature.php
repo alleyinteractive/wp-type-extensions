@@ -21,7 +21,9 @@ final class Widget_Feature implements Feature {
 	/**
 	 * Set up.
 	 *
-	 * @param WP_Widget<array<string, mixed>>|string $widget Widget feature instance.
+	 * @phpstan-param class-string<WP_Widget>|WP_Widget $widget
+	 *
+	 * @param string|WP_Widget $widget Widget feature instance.
 	 */
 	public function __construct(
 		private readonly WP_Widget|string $widget,

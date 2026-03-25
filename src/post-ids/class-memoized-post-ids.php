@@ -1,6 +1,6 @@
 <?php
 /**
- * Post_IDs_Once class file
+ * Memoized_Post_IDs class file
  *
  * @package wp-type-extensions
  */
@@ -12,7 +12,7 @@ use Alley\WP\Types\Post_IDs;
 /**
  * Post IDs generated once.
  */
-final class Post_IDs_Once implements Post_IDs {
+final class Memoized_Post_IDs implements Post_IDs {
 	/**
 	 * Set up.
 	 *

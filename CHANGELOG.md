@@ -4,20 +4,32 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 ## Unreleased
 
+Nothing yet.
+
+## 5.0.0
+
 ### Added
 
+- `Filter_Value` interface.
+- `Process` interface.
+- `Term` interface.
+- `By_Default` feature.
 - `Widget_Feature` feature.
 - `Widget_Features` feature.
-- PHP 8.4 support.
+- `Merge_Filter` class.
+- `Push_Filter` class.
+- PHP 8.5 support.
 
 ### Changed
 
 - `Features::include()` no longer accepts a spread of individual `Feature` instances. Use something more specific like `Group` or `Ordered` to include multiple features at once.
+- `Post_IDs_Once` class renamed `Memoized_Post_IDs`.
 - `WP_CLI_Feature` now hooks into `cli_init` at priority `1`.
 
 ### Removed
 
 - All feature implementations under the `Alley\WP\Features\Library` namespace. Copy these directly into your projects to use and modify them.
+- `Default_Classname_Block` class.
 
 ## 4.1.0
 
