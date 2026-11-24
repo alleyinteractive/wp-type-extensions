@@ -6,6 +6,17 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 5.0.1
+
+### Changed
+
+- Allow `alleyinteractive/laminas-validator-extensions` ^3.0, which brings Laminas Validator 3 and PHP 8.6 support.
+- The minimum PHP version is now 8.3.
+
+### Fixed
+
+- Require `alleyinteractive/composer-wordpress-autoloader` directly. It was previously only installed through `mantle-framework/testkit`, which no longer depends on it, so the library's classes could fail to autoload.
+
 ## 5.0.0
 
 ### Added
