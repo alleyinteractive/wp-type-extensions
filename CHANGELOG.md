@@ -6,7 +6,7 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
-## 5.0.1
+## 5.1.0
 
 ### Changed
 
